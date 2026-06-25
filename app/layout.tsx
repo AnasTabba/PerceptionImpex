@@ -29,17 +29,23 @@ export const metadata: Metadata = {
     template: "%s · Perception Impex",
   },
   description:
-    "Perception Impex is a Pakistan-based yarn trading & sourcing company supplying high-quality cotton, PC, CVC, and specialty yarns through strong relationships with leading spinning mills. 26 years of trusted partnerships.",
+    "Perception Impex is a Pakistan-based yarn trading & sourcing company supplying high-quality cotton, PC, CVC, and specialty yarns through strong relationships with leading spinning mills. 25+ years of trusted partnerships.",
   keywords: [
     "yarn trading",
     "yarn sourcing",
-    "cotton yarn",
+    "cotton yarn supplier Pakistan",
     "PC yarn",
     "CVC yarn",
+    "combed yarn",
+    "carded yarn",
     "Pakistan textile",
-    "spinning mills",
+    "spinning mills Pakistan",
     "B2B yarn supplier",
+    "yarn exporter",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     url: SITE_URL,
@@ -47,8 +53,28 @@ export const metadata: Metadata = {
     description:
       "High-quality cotton, PC, CVC, and specialty yarns sourced from Pakistan's leading spinning mills. Trusted by manufacturers and exporters since 2000.",
     siteName: "Perception Impex",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Perception Impex — 25+ years of trusted yarn trading",
+      },
+    ],
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: "Perception Impex — Trusted Yarn Trading & Sourcing",
+    description:
+      "Cotton, PC, CVC, and specialty yarns sourced from Pakistan's leading spinning mills. Trusted since 2000.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
 };
 
 export const viewport: Viewport = {
@@ -82,6 +108,69 @@ export default function RootLayout({
         </noscript>
       </head>
       <body>
+        {/* Structured data for rich results: Organization + LocalBusiness + WebSite */}
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": `${SITE_URL}/#organization`,
+                  name: "Perception Impex",
+                  url: SITE_URL,
+                  logo: `${SITE_URL}/images/logo.webp`,
+                  image: `${SITE_URL}/og-image.png`,
+                  description:
+                    "Pakistan-based yarn trading & sourcing company supplying cotton, PC, CVC, and specialty yarns from leading spinning mills since 2000.",
+                  foundingDate: "2000",
+                  founder: { "@type": "Person", name: "Muhammad Basheer Tabba" },
+                  email: "info@perceptionimpex.com",
+                  telephone: "+92-300-8209877",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressCountry: "PK",
+                  },
+                  sameAs: [],
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "@id": `${SITE_URL}/#business`,
+                  name: "Perception Impex",
+                  url: SITE_URL,
+                  image: `${SITE_URL}/og-image.png`,
+                  priceRange: "$$",
+                  telephone: "+92-300-8209877",
+                  email: "info@perceptionimpex.com",
+                  address: { "@type": "PostalAddress", addressCountry: "PK" },
+                  openingHoursSpecification: {
+                    "@type": "OpeningHoursSpecification",
+                    dayOfWeek: [
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday",
+                      "Saturday",
+                    ],
+                    opens: "09:00",
+                    closes: "19:00",
+                  },
+                  areaServed: ["Pakistan", "United States", "Canada", "United Kingdom"],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${SITE_URL}/#website`,
+                  url: SITE_URL,
+                  name: "Perception Impex",
+                  publisher: { "@id": `${SITE_URL}/#organization` },
+                },
+              ],
+            }),
+          }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-surface"
