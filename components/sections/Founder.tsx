@@ -34,7 +34,7 @@ export function Founder() {
                 }}
               />
               <div className="relative">
-                <span className="grid h-20 w-20 place-items-center rounded-full bg-teal-500/25 font-display text-2xl font-extrabold tracking-tight-display text-teal-50 ring-1 ring-teal-300/40">
+                <span className="grid h-20 w-20 place-items-center rounded-full bg-teal-500/25 font-display text-2xl font-bold tracking-tight-display text-teal-50 ring-1 ring-teal-300/40">
                   {founder.initials}
                 </span>
                 <h3 className="mt-7 font-display text-2xl font-bold tracking-tight-display sm:text-3xl">
@@ -44,7 +44,7 @@ export function Founder() {
                   {founder.role} · Since {founder.since}
                 </p>
                 <div className="mt-8 border-t border-teal-300/25 pt-6">
-                  <p className="text-lg italic leading-relaxed text-teal-50/90">
+                  <p className="font-display text-xl italic leading-relaxed text-teal-50/90">
                     “Built on trust, consistency, and lasting industry relationships.”
                   </p>
                 </div>

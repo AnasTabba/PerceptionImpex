@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/Logo";
-import { Menu, Close, WhatsApp } from "@/components/ui/Icons";
+import { Menu, Close, WhatsApp, ArrowRight } from "@/components/ui/Icons";
 import { nav, whatsappHref } from "@/lib/content";
 
 export function Header() {
@@ -52,11 +52,11 @@ export function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${
           scrolled || open
-            ? "border-b border-stone-200/80 bg-canvas/95 backdrop-blur-md"
+            ? "border-b border-stone-200/80 bg-canvas/95 shadow-[0_6px_24px_-16px_rgba(20,28,26,0.45)] backdrop-blur-md"
             : "border-b border-transparent"
         }`}
       >
-      <Container className="flex h-16 items-center justify-between lg:h-20">
+        <Container className="flex h-16 items-center justify-between lg:h-20">
         <a href="#main" className="shrink-0" aria-label="Perception Impex home">
           <Logo />
         </a>
@@ -114,22 +114,36 @@ export function Header() {
           this fixed element. */}
       <div
         id="mobile-menu"
+        aria-hidden={!open}
         className={`fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col overflow-y-auto overscroll-contain border-t border-stone-200 bg-canvas transition-all duration-300 ease-out-expo lg:hidden ${
-          open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
+          open
+            ? "visible translate-y-0 opacity-100"
+            : "invisible pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
         <Container className="flex min-h-full flex-col py-6">
           <nav className="flex flex-col" aria-label="Mobile">
-            {nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-stone-200/70 py-4 text-lg font-medium text-ink transition-colors hover:text-teal-600"
-              >
-                {item.label}
-              </a>
-            ))}
+            {nav.map((item) => {
+              const active = activeId === item.href.replace("#", "");
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? "true" : undefined}
+                  className={`group flex items-center justify-between border-b border-stone-200/70 py-4 text-lg font-medium transition-colors ${
+                    active ? "text-teal-700" : "text-ink hover:text-teal-700"
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <ArrowRight
+                    className={`h-4 w-4 transition-colors ${
+                      active ? "text-teal-600" : "text-ink-muted/40 group-hover:text-teal-600"
+                    }`}
+                  />
+                </a>
+              );
+            })}
           </nav>
 
           <div className="mt-auto flex flex-col gap-3 pt-8">

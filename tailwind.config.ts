@@ -12,20 +12,21 @@ const config: Config = {
         xs: "480px",
       },
       colors: {
-        // Warm neutral canvas
-        canvas: "#F6F4EF", // warm off-white background
+        // Crisp cool off-white canvas, faintly tinted toward the brand teal.
+        // Warmth is carried by imagery + serif type, not a sand-colored bg.
+        canvas: "#F5F7F6", // cool off-white page background
         surface: "#FFFFFF", // cards / elevated surfaces
         stone: {
-          50: "#F6F4EF",
-          100: "#EDE9E1",
-          200: "#DED8CC",
-          300: "#C8BFAE",
+          50: "#EDF1F0", // alternating section background
+          100: "#E2E8E6", // chips / hover fills
+          200: "#CFD8D5", // hairline borders / rings
+          300: "#AFBCB8", // muted dividers
         },
-        // Charcoal ink (warm-leaning near-black)
+        // Cool charcoal ink (near-black with a whisper of green-teal)
         ink: {
-          DEFAULT: "#1A1B19",
-          soft: "#3A3C38",
-          muted: "#6B6D67",
+          DEFAULT: "#141C1A",
+          soft: "#36423E",
+          muted: "#586460",
         },
         // Deep teal — the brand accent
         teal: {
@@ -42,23 +43,25 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
         sans: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       letterSpacing: {
-        "tight-display": "-0.02em",
-        "wide-label": "0.22em",
+        // Serif display wants near-zero tracking, not the tight grotesque setting.
+        "tight-display": "-0.01em",
+        "wide-label": "0.16em",
       },
       maxWidth: {
         content: "1280px",
       },
       borderRadius: {
-        xl: "0.875rem",
-        "2xl": "1.25rem",
+        xl: "0.75rem",
+        "2xl": "1rem",
       },
       boxShadow: {
-        soft: "0 1px 2px rgba(26,27,25,0.04), 0 8px 24px rgba(26,27,25,0.06)",
-        lift: "0 2px 4px rgba(26,27,25,0.06), 0 18px 40px rgba(26,27,25,0.10)",
+        // Defined, layered shadows (not wide soft "ghost" blur paired with a border).
+        soft: "0 1px 2px rgba(20,28,26,0.05), 0 4px 12px rgba(20,28,26,0.05)",
+        lift: "0 2px 6px rgba(20,28,26,0.06), 0 14px 30px rgba(20,28,26,0.10)",
       },
       keyframes: {
         "fade-up": {

@@ -10,7 +10,7 @@ export function Stats() {
         <dl className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <Reveal as="div" key={stat.label} delay={i * 80} className="text-center lg:text-left">
-              <dd className="font-display text-[1.75rem] font-extrabold leading-none tracking-tight-display xs:text-3xl sm:text-4xl lg:text-5xl">
+              <dd className="font-display text-[1.75rem] font-bold leading-none tracking-tight-display xs:text-3xl sm:text-4xl lg:text-5xl">
                 <CountUp
                   end={stat.value}
                   prefix={"prefix" in stat ? (stat as { prefix?: string }).prefix : ""}

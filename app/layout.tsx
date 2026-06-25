@@ -1,18 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Inter } from "next/font/google";
+import { Spectral, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
 // Self-hosted via next/font: no external round-trip, no layout shift.
-const display = Manrope({
+// Spectral (high-contrast serif) carries heritage gravitas in headings;
+// Hanken Grotesk (clean grotesque) handles body, specs, and UI — a real
+// serif/sans contrast axis rather than two near-identical geometric sans.
+const display = Spectral({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
 });
 
-const body = Inter({
+const body = Hanken_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   variable: "--font-body",
   display: "swap",
 });

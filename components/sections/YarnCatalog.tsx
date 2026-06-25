@@ -12,14 +12,9 @@ function CatalogCard({ cat, index }: { cat: YarnCategory; index: number }) {
       delay={(index % 3) * 70}
       className="hover-lift flex flex-col rounded-2xl bg-surface p-6 shadow-soft ring-1 ring-stone-200 hover:shadow-lift hover:ring-teal-200"
     >
-      <div className="flex items-baseline gap-3">
-        <span className="font-display text-sm font-bold text-teal-500">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <h3 className="font-display text-lg font-bold tracking-tight-display text-ink">
-          {cat.name}
-        </h3>
-      </div>
+      <h3 className="font-display text-xl font-bold tracking-tight-display text-ink">
+        {cat.name}
+      </h3>
       <p className="mt-2 text-sm leading-relaxed text-ink-soft">{cat.desc}</p>
 
       {cat.counts && (

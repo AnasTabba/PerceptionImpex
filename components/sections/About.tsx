@@ -19,7 +19,7 @@ export function About() {
             <Reveal as="li" key={item.year} delay={i * 80} className="relative">
               <div className="flex items-center gap-3">
                 <span className="h-2.5 w-2.5 rounded-full bg-teal-500 ring-4 ring-teal-500/15" />
-                <span className="font-display text-2xl font-extrabold tracking-tight-display text-teal-600">
+                <span className="font-display text-2xl font-bold tracking-tight-display text-teal-600">
                   {item.year}
                 </span>
               </div>

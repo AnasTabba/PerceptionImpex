@@ -27,7 +27,7 @@ export function Logo({ tone = "dark", className = "" }: LogoProps) {
       />
       <span className="leading-none">
         <span
-          className="block font-display text-[1.05rem] font-extrabold tracking-tight-display sm:text-lg"
+          className="block font-sans text-[1.05rem] font-extrabold tracking-tight-display sm:text-lg"
           style={{ color: isLight ? "#FFFFFF" : "#16245C" }}
         >
           PERCEPTION
