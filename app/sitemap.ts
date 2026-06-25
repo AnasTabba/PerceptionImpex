@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://perceptionimpex.com";
+const SITE_URL = "https://www.perceptionimpex.com";
 
 export const dynamic = "force-static";
 

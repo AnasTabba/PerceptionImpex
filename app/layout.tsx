@@ -20,7 +20,7 @@ const body = Hanken_Grotesk({
   display: "swap",
 });
 
-const SITE_URL = "https://perceptionimpex.com";
+const SITE_URL = "https://www.perceptionimpex.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
