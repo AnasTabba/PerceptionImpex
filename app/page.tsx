@@ -5,6 +5,7 @@ import { LogoMarquee } from "@/components/LogoMarquee";
 import { Hero } from "@/components/sections/Hero";
 import { Stats } from "@/components/sections/Stats";
 import { Products } from "@/components/sections/Products";
+import { YarnCatalog } from "@/components/sections/YarnCatalog";
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { Strengths } from "@/components/sections/Strengths";
 import { Partners } from "@/components/sections/Partners";
@@ -23,6 +24,7 @@ export default function Home() {
         <Stats />
         <LogoMarquee />
         <Products />
+        <YarnCatalog />
         <GlobalReach />
         <Strengths />
         <Partners />

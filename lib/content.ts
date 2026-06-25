@@ -131,6 +131,77 @@ export const products: Product[] = [
   },
 ];
 
+// Detailed yarn catalog — the full range we can source and supply.
+export type YarnCategory = {
+  name: string;
+  desc: string;
+  counts?: string[];
+  specs?: { label: string; value: string }[];
+};
+
+export const yarnCatalog: YarnCategory[] = [
+  {
+    name: "Carded Yarns",
+    desc: "Ring-spun carded counts for everyday knit and woven fabrics.",
+    counts: ["Ne 8/1", "Ne 10/1", "Ne 12/1", "Ne 14/1", "Ne 16/1", "Ne 20/1", "Ne 21/1"],
+  },
+  {
+    name: "Combed Yarns",
+    desc: "Smoother, stronger combed counts for premium-quality fabrics.",
+    counts: ["Ne 16/1", "Ne 20/1", "Ne 24/1", "Ne 26/1", "Ne 30/1", "Ne 32/1"],
+  },
+  {
+    name: "Compact Siro Yarns",
+    desc: "Compact-spun Siro yarns with low hairiness and high strength.",
+    counts: ["Ne 8/1", "Ne 10/1", "Ne 12/1"],
+  },
+  {
+    name: "Fancy Yarns",
+    desc: "Yarns engineered with various man-made fibre (MMF) content and custom blends.",
+    counts: ["Various MMF & blends", "Custom specification"],
+  },
+  {
+    name: "Plied Yarns",
+    desc: "Two-ply carded and combed yarns for added strength and durability.",
+    counts: ["Ne 20/2 Carded", "Ne 32/2 Carded", "Ne 20/2 Combed", "Ne 32/2 Combed"],
+  },
+  {
+    name: "Core Spun Yarns",
+    desc: "Cotton-wrapped Lycra core for stretch and performance fabrics.",
+    counts: [
+      "Ne 12/1 CD + 40D Lycra",
+      "Ne 12/1 CD + 70D Lycra",
+      "Ne 16/1 CD + 40D Lycra",
+      "Ne 16/1 CD + 70D Lycra",
+    ],
+  },
+  {
+    name: "Slub Yarns",
+    desc: "Carded slub yarns in a range of slub patterns for textured, character fabrics.",
+    counts: ["Ne 8/1", "Ne 10/1", "Ne 12/1", "Various slub patterns"],
+  },
+  {
+    name: "Package / Cone Dyed Yarns",
+    desc: "Cone-dyed to your required shade, ready for knitting and weaving.",
+    specs: [
+      { label: "Count", value: "Ne 5s – Ne 40s & multiply" },
+      { label: "Quality", value: "Carded & Combed, Ring Spun & Compact" },
+      { label: "Fiber", value: "100% Cotton, Poly-Cotton, Tencel, Modal" },
+      { label: "Usage", value: "Knitting, Fabric & Towel weaving, Socks" },
+    ],
+  },
+  {
+    name: "Gassed Mercerized / Dyed Yarns",
+    desc: "Gassed, mercerized and dyed yarns with superior lustre and smoothness.",
+    specs: [
+      { label: "Count", value: "Ne 5/2 – Ne 120/2 & multiply" },
+      { label: "Quality", value: "Carded & Combed, Ring Spun & Compact" },
+      { label: "Fiber", value: "100% Cotton" },
+      { label: "Usage", value: "Knitting, Weaving, Towel, Socks, Crochet" },
+    ],
+  },
+];
+
 export const founder = {
   name: "Muhammad Basheer Tabba",
   role: "Founder",
@@ -285,7 +356,8 @@ export const quoteFields: FormField[] = [
 ];
 
 export const nav = [
-  { label: "Products", href: "#products" },
+  { label: "Yarns", href: "#products" },
+  { label: "Yarn Range", href: "#yarn-range" },
   { label: "Global Reach", href: "#global" },
   { label: "Why Us", href: "#why" },
   { label: "Partners", href: "#partners" },

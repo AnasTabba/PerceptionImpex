@@ -61,7 +61,7 @@ export function Header() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-5 xl:gap-6 lg:flex" aria-label="Primary">
           {nav.map((item) => {
             const active = activeId === item.href.replace("#", "");
             return (
