@@ -107,37 +107,41 @@ export function Header() {
         </button>
       </Container>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — full-height overlay so page content never shows through */}
       <div
         id="mobile-menu"
-        className={`overflow-hidden border-t border-stone-200 bg-canvas transition-[max-height] duration-300 ease-out-expo lg:hidden ${
-          open ? "max-h-[420px]" : "max-h-0"
+        className={`fixed inset-x-0 bottom-0 top-16 z-50 flex flex-col overflow-y-auto overscroll-contain border-t border-stone-200 bg-canvas transition-all duration-300 ease-out-expo lg:hidden ${
+          open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
-        <Container className="flex flex-col gap-1 py-4">
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-3 text-base font-medium text-ink transition-colors hover:bg-stone-100"
-            >
-              {item.label}
-            </a>
-          ))}
-          <div className="mt-2 grid grid-cols-2 gap-3 px-1">
+        <Container className="flex min-h-full flex-col py-6">
+          <nav className="flex flex-col" aria-label="Mobile">
+            {nav.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="border-b border-stone-200/70 py-4 text-lg font-medium text-ink transition-colors hover:text-teal-600"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="mt-auto flex flex-col gap-3 pt-8">
+            <Button as="a" href="#quote" variant="primary" size="lg" onClick={() => setOpen(false)}>
+              Request Quote
+            </Button>
             <Button
               as="a"
               href={whatsappHref()}
               target="_blank"
               rel="noopener noreferrer"
               variant="ghost"
+              size="lg"
               onClick={() => setOpen(false)}
             >
-              <WhatsApp className="h-5 w-5" /> WhatsApp
-            </Button>
-            <Button as="a" href="#quote" variant="primary" onClick={() => setOpen(false)}>
-              Request Quote
+              <WhatsApp className="h-5 w-5" /> WhatsApp Us
             </Button>
           </div>
         </Container>
