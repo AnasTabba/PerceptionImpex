@@ -1,0 +1,75 @@
+import type { Metadata, Viewport } from "next";
+import { Manrope, Inter } from "next/font/google";
+import "./globals.css";
+
+// Self-hosted via next/font: no external round-trip, no layout shift.
+const display = Manrope({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const body = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const SITE_URL = "https://perceptionimpex.com";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Perception Impex — Trusted Yarn Trading & Sourcing Since 2000",
+    template: "%s · Perception Impex",
+  },
+  description:
+    "Perception Impex is a Pakistan-based yarn trading & sourcing company supplying high-quality cotton, PC, CVC, and specialty yarns through strong relationships with leading spinning mills. 26 years of trusted partnerships.",
+  keywords: [
+    "yarn trading",
+    "yarn sourcing",
+    "cotton yarn",
+    "PC yarn",
+    "CVC yarn",
+    "Pakistan textile",
+    "spinning mills",
+    "B2B yarn supplier",
+  ],
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    title: "Perception Impex — Trusted Yarn Trading & Sourcing Since 2000",
+    description:
+      "High-quality cotton, PC, CVC, and specialty yarns sourced from Pakistan's leading spinning mills. Trusted by manufacturers and exporters since 2000.",
+    siteName: "Perception Impex",
+  },
+  robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0F766E",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <body>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-surface"
+        >
+          Skip to content
+        </a>
+        {children}
+      </body>
+    </html>
+  );
+}
