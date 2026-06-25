@@ -19,9 +19,9 @@ export function Strengths() {
               as="div"
               key={item.title}
               delay={(i % 4) * 70}
-              className="flex flex-col bg-surface p-6 transition-colors duration-300 hover:bg-teal-50"
+              className="group flex flex-col bg-surface p-6 transition-colors duration-300 hover:bg-teal-50"
             >
-              <span className="font-display text-sm font-bold text-teal-500">
+              <span className="inline-block font-display text-sm font-bold text-teal-500 transition-transform duration-300 ease-out-expo group-hover:-translate-y-0.5 group-hover:scale-110">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 font-display text-base font-bold tracking-tight-display text-ink">

@@ -163,22 +163,25 @@ export type Client = {
 
 export const clients: Client[] = [
   {
-    name: "Unique Textiles",
-    logo: { src: "/images/clients/unique.webp", alt: "Unique Textiles logo", w: 300, h: 281 },
+    name: "Multimat",
+    logo: { src: "/images/clients/multimat.webp", alt: "Multimat International logo", w: 750, h: 201 },
   },
   {
     name: "AOL Apparel",
     logo: { src: "/images/clients/aol.webp", alt: "AOL Apparel logo", w: 250, h: 171 },
   },
   {
-    name: "Multimat",
-    logo: { src: "/images/clients/multimat.webp", alt: "Multimat International logo", w: 750, h: 201 },
+    name: "Unique Textiles",
+    logo: { src: "/images/clients/unique.webp", alt: "Unique Textiles logo", w: 300, h: 281 },
   },
   {
     name: "Redox Fashion",
     logo: { src: "/images/clients/redox.webp", alt: "Redox Fashion logo", w: 200, h: 200 },
   },
-  { name: "Zunaira" },
+  {
+    name: "Zunaira Industries",
+    logo: { src: "/images/clients/zunaira.webp", alt: "Zunaira Industries logo", w: 550, h: 215 },
+  },
   { name: "Al Zainab & Sons" },
 ];
 

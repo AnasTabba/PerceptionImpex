@@ -9,7 +9,7 @@ function LogoCard({ entry, index }: { entry: Supplier | Client; index: number })
     <Reveal
       as="div"
       delay={(index % 4) * 70}
-      className="flex flex-col items-center justify-between gap-4 rounded-xl bg-surface p-5 shadow-soft ring-1 ring-stone-200"
+      className="hover-lift group flex flex-col items-center justify-between gap-4 rounded-xl bg-surface p-5 shadow-soft ring-1 ring-stone-200 hover:shadow-lift hover:ring-teal-200"
     >
       <div className="flex h-16 w-full items-center justify-center">
         {entry.logo ? (
@@ -19,7 +19,7 @@ function LogoCard({ entry, index }: { entry: Supplier | Client; index: number })
             width={entry.logo.w}
             height={entry.logo.h}
             loading="lazy"
-            className="max-h-14 w-auto max-w-[150px] object-contain"
+            className="max-h-14 w-auto max-w-[150px] object-contain transition-transform duration-300 ease-out-expo group-hover:scale-105"
           />
         ) : (
           <span className="text-center font-display text-lg font-bold tracking-tight-display text-ink-soft">

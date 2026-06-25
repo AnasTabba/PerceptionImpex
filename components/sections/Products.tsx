@@ -11,7 +11,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
     <Reveal
       as="article"
       delay={(index % 2) * 80}
-      className="group flex flex-col overflow-hidden rounded-2xl bg-surface shadow-soft ring-1 ring-stone-200 transition-shadow duration-300 hover:shadow-lift"
+      className="group hover-lift flex flex-col overflow-hidden rounded-2xl bg-surface shadow-soft ring-1 ring-stone-200 hover:shadow-lift hover:ring-teal-200"
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-teal-700">
         {product.image ? (

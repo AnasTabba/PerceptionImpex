@@ -10,15 +10,17 @@ const trustPoints = ["Cotton · PC · CVC", "15–20+ partner mills", "Export qu
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-40 lg:pb-24">
-      {/* Warm ambient background accents */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(60rem 40rem at 85% -10%, rgba(15,118,110,0.10), transparent 60%), radial-gradient(50rem 40rem at -10% 20%, rgba(200,191,174,0.25), transparent 55%)",
-        }}
-      />
+      {/* Warm ambient background accents (gently drifting) */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="animate-drift absolute -right-32 -top-40 h-[40rem] w-[40rem] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(15,118,110,0.12), transparent 62%)" }}
+        />
+        <div
+          className="animate-drift absolute -left-40 top-10 h-[36rem] w-[36rem] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(200,191,174,0.28), transparent 60%)", animationDelay: "-7s" }}
+        />
+      </div>
 
       <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         {/* Copy */}
@@ -88,7 +90,7 @@ export function Hero() {
           </div>
 
           {/* Floating heritage badge */}
-          <div className="absolute -bottom-5 -left-3 rounded-xl bg-surface px-5 py-4 shadow-lift ring-1 ring-stone-200 sm:-left-5">
+          <div className="animate-float absolute -bottom-5 -left-3 rounded-xl bg-surface px-5 py-4 shadow-lift ring-1 ring-stone-200 sm:-left-5">
             <p className="font-display text-3xl font-extrabold leading-none text-teal-500">26+</p>
             <p className="mt-1 text-xs font-medium uppercase tracking-wide-label text-ink-muted">
               Years Trading

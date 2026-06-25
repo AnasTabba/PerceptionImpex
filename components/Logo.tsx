@@ -1,38 +1,40 @@
+import Image from "next/image";
 import { company } from "@/lib/content";
 
 type LogoProps = {
-  /** "dark" = ink text (light backgrounds), "light" = white text (dark/hero). */
+  /** "dark" = on light backgrounds (header). "light" = on dark backgrounds (footer). */
   tone?: "dark" | "light";
   className?: string;
 };
 
 /**
- * LOGO PLACEHOLDER.
- * The real logo isn't ready yet. This text wordmark + mark fills the slot and
- * is sized to be swapped for an <Image> when the asset arrives — replace the
- * inner markup only; the surrounding layout/sizing can stay.
+ * Company logo.
+ * - Light backgrounds (header): the real logo image (its background matches the
+ *   site canvas, so it blends seamlessly).
+ * - Dark backgrounds (footer): a white wordmark, since the logo art is on light.
  */
 export function Logo({ tone = "dark", className = "" }: LogoProps) {
-  const text = tone === "light" ? "text-white" : "text-ink";
-  const sub = tone === "light" ? "text-white/70" : "text-ink-muted";
+  if (tone === "light") {
+    return (
+      <span className={`inline-flex flex-col leading-none ${className}`} aria-label={company.name}>
+        <span className="font-display text-xl font-extrabold tracking-tight-display text-white">
+          PERCEPTION&nbsp;IMPEX
+        </span>
+        <span className="mt-1 text-[0.6rem] font-semibold uppercase tracking-wide-label text-white/55">
+          Connecting Quality Yarn Globally
+        </span>
+      </span>
+    );
+  }
 
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className}`} aria-label={company.name}>
-      {/* Placeholder mark — interlocking "PI" rings, echoes spun yarn */}
-      <span className="grid h-9 w-9 place-items-center rounded-lg bg-teal-500 text-white shadow-soft">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <circle cx="9" cy="12" r="5.5" stroke="currentColor" strokeWidth="1.8" />
-          <circle cx="15" cy="12" r="5.5" stroke="currentColor" strokeWidth="1.8" opacity="0.6" />
-        </svg>
-      </span>
-      <span className="leading-none">
-        <span className={`block font-display text-[1.05rem] font-bold tracking-tight-display ${text}`}>
-          PERCEPTION
-        </span>
-        <span className={`block text-[0.62rem] font-semibold uppercase tracking-wide-label ${sub}`}>
-          Impex
-        </span>
-      </span>
-    </span>
+    <Image
+      src="/images/logo.webp"
+      alt={`${company.name} logo`}
+      width={384}
+      height={384}
+      priority
+      className={`h-11 w-auto sm:h-12 lg:h-14 ${className}`}
+    />
   );
 }

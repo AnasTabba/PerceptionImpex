@@ -48,22 +48,134 @@
   .tabular {
     font-variant-numeric: tabular-nums;
   }
-  /* Reveal-on-scroll: starts hidden, .is-visible reveals */
+
+  /* Reveal-on-scroll: starts hidden, .is-visible reveals (fade + rise) */
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(32px);
     transition:
-      opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
   .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Card hover: lift + deepen shadow. Always on (subtle, not vestibular). */
+  .hover-lift {
+    transition:
+      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.35s ease;
+  }
+  .count-pop {
+    animation: count-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Animated underline for nav links */
+  .nav-underline {
+    position: relative;
+  }
+  .nav-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    background: theme("colors.teal.500");
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nav-underline:hover::after,
+  .nav-underline[data-active="true"]::after {
+    transform: scaleX(1);
+  }
+
+  /* Button sheen sweep on hover */
+  .sheen {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 75%
+    );
+    transform: translateX(-130%);
+    transition: transform 0.7s ease;
+    pointer-events: none;
+  }
+  .sheen > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
-/* Respect users who prefer reduced motion: disable all reveal/transition motion */
+@media (hover: hover) {
+  .hover-lift:hover {
+    transform: translateY(-6px);
+  }
+  .sheen:hover::after {
+    transform: translateX(130%);
+  }
+}
+
+/* Decorative keyframe animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes count-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, -3%, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+.animate-drift {
+  animation: drift 14s ease-in-out infinite;
+}
+
+/*
+ * Reduced motion: disable scroll reveals, count-up, and continuous/decorative
+ * motion. Subtle hover feedback (color, small lift) is preserved intentionally.
+ */
 @media (prefers-reduced-motion: reduce) {
   :root {
     scroll-behavior: auto;
@@ -73,11 +185,10 @@
     transform: none !important;
     transition: none !important;
   }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
+  .animate-float,
+  .animate-drift,
+  .animate-pulse-ring,
+  .count-pop {
+    animation: none !important;
   }
 }

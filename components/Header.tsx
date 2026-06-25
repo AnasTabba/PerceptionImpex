@@ -10,12 +10,33 @@ import { nav, whatsappHref } from "@/lib/content";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Scroll-spy: highlight the nav item for the section currently in view.
+  useEffect(() => {
+    const ids = nav.map((n) => n.href.replace("#", ""));
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
   }, []);
 
   // Lock body scroll while the mobile menu is open.
@@ -41,15 +62,21 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-ink-soft transition-colors hover:text-teal-600"
-            >
-              {item.label}
-            </a>
-          ))}
+          {nav.map((item) => {
+            const active = activeId === item.href.replace("#", "");
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                data-active={active}
+                className={`nav-underline text-sm font-medium transition-colors ${
+                  active ? "text-teal-600" : "text-ink-soft hover:text-teal-600"
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">

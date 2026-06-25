@@ -4,7 +4,7 @@ type Variant = "primary" | "secondary" | "ghost" | "onDark";
 type Size = "md" | "lg";
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition duration-200 ease-out-expo [touch-action:manipulation] disabled:opacity-50 disabled:cursor-not-allowed";
+  "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition duration-200 ease-out-expo [touch-action:manipulation] hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0";
 
 const sizes: Record<Size, string> = {
   md: "h-11 px-5 text-sm",
@@ -13,13 +13,13 @@ const sizes: Record<Size, string> = {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-teal-500 text-white shadow-soft hover:bg-teal-600 hover:shadow-lift active:translate-y-px",
+    "sheen bg-teal-500 text-white shadow-soft hover:bg-teal-600 hover:shadow-lift",
   secondary:
-    "bg-ink text-white hover:bg-ink-soft active:translate-y-px",
+    "sheen bg-ink text-white hover:bg-ink-soft hover:shadow-lift",
   ghost:
-    "bg-transparent text-ink ring-1 ring-stone-200 hover:ring-ink hover:bg-stone-100",
+    "bg-transparent text-ink ring-1 ring-stone-200 hover:ring-teal-400 hover:bg-teal-50",
   onDark:
-    "bg-white/95 text-ink hover:bg-white active:translate-y-px",
+    "sheen bg-white/95 text-ink hover:bg-white hover:shadow-lift",
 };
 
 type CommonProps = {

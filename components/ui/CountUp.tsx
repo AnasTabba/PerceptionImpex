@@ -21,13 +21,14 @@ const prefersReducedMotion = () =>
  */
 export function CountUp({
   end,
-  duration = 1600,
+  duration = 2000,
   prefix = "",
   suffix = "",
   className = "",
 }: CountUpProps) {
   const { ref, inView } = useInView<HTMLSpanElement>({ threshold: 0.5 });
   const [value, setValue] = useState(0);
+  const [done, setDone] = useState(false);
   const startedRef = useRef(false);
 
   useEffect(() => {
@@ -46,14 +47,21 @@ export function CountUp({
       // ease-out cubic
       const eased = 1 - Math.pow(1 - t, 3);
       setValue(Math.round(eased * end));
-      if (t < 1) raf = requestAnimationFrame(tick);
+      if (t < 1) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        setDone(true);
+      }
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [inView, end, duration]);
 
   return (
-    <span ref={ref} className={`tabular ${className}`}>
+    <span
+      ref={ref}
+      className={`tabular inline-block ${done ? "count-pop" : ""} ${className}`}
+    >
       {prefix}
       {value}
       {suffix}
