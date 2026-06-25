@@ -48,13 +48,14 @@ export function Header() {
   }, [open]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${
-        scrolled || open
-          ? "border-b border-stone-200/80 bg-canvas/85 backdrop-blur-md"
-          : "border-b border-transparent"
-      }`}
-    >
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${
+          scrolled || open
+            ? "border-b border-stone-200/80 bg-canvas/95 backdrop-blur-md"
+            : "border-b border-transparent"
+        }`}
+      >
       <Container className="flex h-16 items-center justify-between lg:h-20">
         <a href="#main" className="shrink-0" aria-label="Perception Impex home">
           <Logo />
@@ -105,12 +106,15 @@ export function Header() {
         >
           {open ? <Close /> : <Menu />}
         </button>
-      </Container>
+        </Container>
+      </header>
 
-      {/* Mobile menu — full-height overlay so page content never shows through */}
+      {/* Mobile menu — full-height overlay rendered OUTSIDE <header> so the
+          header's backdrop-blur can't create a containing block that collapses
+          this fixed element. */}
       <div
         id="mobile-menu"
-        className={`fixed inset-x-0 bottom-0 top-16 z-50 flex flex-col overflow-y-auto overscroll-contain border-t border-stone-200 bg-canvas transition-all duration-300 ease-out-expo lg:hidden ${
+        className={`fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col overflow-y-auto overscroll-contain border-t border-stone-200 bg-canvas transition-all duration-300 ease-out-expo lg:hidden ${
           open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
@@ -146,6 +150,6 @@ export function Header() {
           </div>
         </Container>
       </div>
-    </header>
+    </>
   );
 }
