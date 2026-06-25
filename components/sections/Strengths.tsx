@@ -1,0 +1,37 @@
+import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal";
+import { strengths } from "@/lib/content";
+
+export function Strengths() {
+  return (
+    <section id="why" className="scroll-mt-24 py-20 sm:py-28">
+      <Container>
+        <SectionHeading
+          eyebrow="Why Perception Impex"
+          title="A trading partner manufacturers rely on"
+          description="Not a small broker — an experienced trading house with decades of mill relationships, dependable supply, and terms built for real production schedules."
+        />
+
+        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl bg-stone-200 ring-1 ring-stone-200 sm:grid-cols-2 lg:grid-cols-4">
+          {strengths.map((item, i) => (
+            <Reveal
+              as="div"
+              key={item.title}
+              delay={(i % 4) * 70}
+              className="flex flex-col bg-surface p-6 transition-colors duration-300 hover:bg-teal-50"
+            >
+              <span className="font-display text-sm font-bold text-teal-500">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-3 font-display text-base font-bold tracking-tight-display text-ink">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{item.desc}</p>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
