@@ -371,6 +371,35 @@ export const quoteFields: FormField[] = [
   { name: "message", label: "Message", type: "textarea", required: false, full: true, placeholder: "Tell us about your requirement…" },
 ];
 
+// FAQ — phrased the way B2B yarn buyers actually search (drives "People Also
+// Ask" results). Answers feed both the on-page section and FAQPage schema.
+export const faqs = [
+  {
+    q: "What is the minimum order quantity (MOQ) for yarn?",
+    a: "Our minimum order quantity is 500 bags per month. We supply at volume for manufacturers and exporters, and can discuss requirements based on yarn type and count.",
+  },
+  {
+    q: "Do you provide yarn samples before bulk orders?",
+    a: "Yes. Samples are available on request so you can verify quality, count, and blend before placing a bulk order.",
+  },
+  {
+    q: "Can yarn be customized according to requirements?",
+    a: "Yes. We source custom counts, plies, blends, and dyed or gassed-mercerized yarns to your exact specification from our mill network in Pakistan.",
+  },
+  {
+    q: "Which yarn types and counts do you supply?",
+    a: "We supply cotton, PC, and CVC yarns plus specialty yarns — carded, combed, compact Siro, plied, core-spun, slub, package/cone-dyed, and gassed mercerized — across a wide count range (e.g. Ne 8s to Ne 40s and multiply).",
+  },
+  {
+    q: "Do you export yarn from Pakistan to other countries?",
+    a: "Yes. We supply manufacturers and exporters internationally, including buyers in the United States, Canada, and the United Kingdom, sourcing quality yarn from Pakistan's leading spinning mills.",
+  },
+  {
+    q: "What payment terms do you offer?",
+    a: "We offer flexible payment terms with 30, 60, and 90 day options to suit your cash flow.",
+  },
+];
+
 export const nav = [
   { label: "Yarns", href: "#products" },
   { label: "Yarn Range", href: "#yarn-range" },

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Spectral, Hanken_Grotesk } from "next/font/google";
+import { faqs } from "@/lib/content";
 import "./globals.css";
 
 // Self-hosted via next/font: no external round-trip, no layout shift.
@@ -25,23 +26,28 @@ const SITE_URL = "https://www.perceptionimpex.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Perception Impex — Trusted Yarn Trading & Sourcing Since 2000",
+    default:
+      "Cotton Yarn Supplier & Exporter in Pakistan | Perception Impex",
     template: "%s · Perception Impex",
   },
   description:
-    "Perception Impex is a Pakistan-based yarn trading & sourcing company supplying high-quality cotton, PC, CVC, and specialty yarns through strong relationships with leading spinning mills. 25+ years of trusted partnerships.",
+    "Perception Impex is a trusted cotton, PC & CVC yarn supplier and exporter in Pakistan, sourcing quality yarn from leading spinning mills since 2000. Founded by Muhammad Basheer Tabba. Serving manufacturers, exporters & international buyers.",
   keywords: [
-    "yarn trading",
-    "yarn sourcing",
+    "yarn supplier Pakistan",
     "cotton yarn supplier Pakistan",
-    "PC yarn",
-    "CVC yarn",
+    "yarn supplier in Pakistan",
+    "yarn exporter Pakistan",
+    "cotton yarn exporter Pakistan",
+    "top yarn in Pakistan",
+    "PC yarn supplier",
+    "CVC yarn supplier",
     "combed yarn",
     "carded yarn",
-    "Pakistan textile",
+    "Ne 20s combed cotton yarn",
     "spinning mills Pakistan",
     "B2B yarn supplier",
-    "yarn exporter",
+    "Perception Impex",
+    "Muhammad Basheer Tabba",
   ],
   alternates: {
     canonical: "/",
@@ -126,7 +132,7 @@ export default function RootLayout({
                   description:
                     "Pakistan-based yarn trading & sourcing company supplying cotton, PC, CVC, and specialty yarns from leading spinning mills since 2000.",
                   foundingDate: "2000",
-                  founder: { "@type": "Person", name: "Muhammad Basheer Tabba" },
+                  founder: { "@id": `${SITE_URL}/#founder` },
                   email: "info@perceptionimpex.com",
                   telephone: "+92-300-8209877",
                   address: {
@@ -161,11 +167,29 @@ export default function RootLayout({
                   areaServed: ["Pakistan", "United States", "Canada", "United Kingdom"],
                 },
                 {
+                  "@type": "Person",
+                  "@id": `${SITE_URL}/#founder`,
+                  name: "Muhammad Basheer Tabba",
+                  jobTitle: "Founder",
+                  worksFor: { "@id": `${SITE_URL}/#organization` },
+                  description:
+                    "Founder of Perception Impex, a Pakistan-based yarn trading and sourcing company established in 2000.",
+                },
+                {
                   "@type": "WebSite",
                   "@id": `${SITE_URL}/#website`,
                   url: SITE_URL,
                   name: "Perception Impex",
                   publisher: { "@id": `${SITE_URL}/#organization` },
+                },
+                {
+                  "@type": "FAQPage",
+                  "@id": `${SITE_URL}/#faq`,
+                  mainEntity: faqs.map((f) => ({
+                    "@type": "Question",
+                    name: f.q,
+                    acceptedAnswer: { "@type": "Answer", text: f.a },
+                  })),
                 },
               ],
             }),

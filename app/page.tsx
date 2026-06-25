@@ -11,6 +11,7 @@ import { Strengths } from "@/components/sections/Strengths";
 import { Partners } from "@/components/sections/Partners";
 import { About } from "@/components/sections/About";
 import { Founder } from "@/components/sections/Founder";
+import { Faq } from "@/components/sections/Faq";
 import { Quote } from "@/components/sections/Quote";
 import { Footer } from "@/components/Footer";
 
@@ -30,6 +31,7 @@ export default function Home() {
         <Partners />
         <About />
         <Founder />
+        <Faq />
         <Quote />
       </main>
       <Footer />
