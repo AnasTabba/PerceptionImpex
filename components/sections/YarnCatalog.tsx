@@ -67,6 +67,13 @@ export function YarnCatalog() {
           ))}
         </div>
 
+        <Reveal className="mt-6">
+          <p className="text-sm italic leading-relaxed text-ink-muted">
+            Representative range — counts, plies, and blends are sourced to requirement from our
+            mill network. Specifications can vary by order and availability.
+          </p>
+        </Reveal>
+
         {/* Custom-count note + CTA */}
         <Reveal className="mt-10">
           <div className="flex flex-col items-start justify-between gap-5 rounded-2xl bg-ink p-7 text-white sm:flex-row sm:items-center sm:p-8">
