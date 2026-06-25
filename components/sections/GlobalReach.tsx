@@ -67,8 +67,8 @@ export function GlobalReach() {
                   key={d.name}
                   d={arcPath(dx, dy)}
                   fill="none"
-                  stroke="#2C8A7D"
-                  strokeWidth={1.6}
+                  stroke="#34D0BD"
+                  strokeWidth={2}
                   strokeLinecap="round"
                   pathLength={1}
                   style={{
@@ -86,9 +86,9 @@ export function GlobalReach() {
               const [dx, dy] = project(d.lon, d.lat);
               return (
                 <g key={d.name} style={{ opacity: inView ? 1 : 0, transition: "opacity 0.4s ease-out", transitionDelay: `${0.9 + i * 0.35}s` }}>
-                  <circle cx={dx} cy={dy} r={6} fill="none" stroke="#57A79C" strokeWidth={1.5} className="origin-center animate-pulse-ring [transform-box:fill-box]" style={{ transformOrigin: `${dx}px ${dy}px` }} />
-                  <circle cx={dx} cy={dy} r={3.2} fill="#57A79C" />
-                  <circle cx={dx} cy={dy} r={1.4} fill="#fff" />
+                  <circle cx={dx} cy={dy} r={6} fill="none" stroke="#5EEAD4" strokeWidth={1.5} className="origin-center animate-pulse-ring [transform-box:fill-box]" style={{ transformOrigin: `${dx}px ${dy}px` }} />
+                  <circle cx={dx} cy={dy} r={3.4} fill="#5EEAD4" />
+                  <circle cx={dx} cy={dy} r={1.5} fill="#0A4D47" />
                 </g>
               );
             })}

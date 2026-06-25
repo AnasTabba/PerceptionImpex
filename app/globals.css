@@ -15,6 +15,7 @@
   body {
     @apply bg-canvas text-ink font-sans antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden; /* guard against any incidental horizontal scroll */
   }
 
   /* Consistent, accessible focus ring across interactive elements */

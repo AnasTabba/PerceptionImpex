@@ -30,7 +30,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={60}>
-            <h1 className="font-display text-4xl font-extrabold leading-[1.04] tracking-tight-display text-ink sm:text-5xl lg:text-6xl text-balance">
+            <h1 className="font-display text-[1.85rem] font-extrabold leading-[1.1] tracking-tight-display text-ink xs:text-4xl sm:text-5xl sm:leading-[1.04] lg:text-6xl">
               26 Years of <span className="text-teal-500">Trusted Yarn</span> Trading Excellence
             </h1>
           </Reveal>

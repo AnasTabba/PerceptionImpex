@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "480px",
+      },
       colors: {
         // Warm neutral canvas
         canvas: "#F6F4EF", // warm off-white background

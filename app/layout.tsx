@@ -61,6 +61,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <head>
+        {/* If JS is disabled, reveal all content immediately (no hidden sections). */}
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
+      </head>
       <body>
         <a
           href="#main"
