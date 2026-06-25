@@ -10,6 +10,7 @@ import {
   contact,
   formspreeAction,
   whatsappHref,
+  gmailHref,
   type FormField,
 } from "@/lib/content";
 
@@ -131,14 +132,20 @@ export function Quote() {
               <Button as="a" href={whatsappHref()} target="_blank" rel="noopener noreferrer" variant="primary">
                 <WhatsApp className="h-5 w-5" /> WhatsApp Us
               </Button>
-              <Button as="a" href={`mailto:${contact.email}`} variant="ghost">
+              <Button
+                as="a"
+                href={gmailHref()}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="ghost"
+              >
                 <Mail className="h-5 w-5" /> Email Us
               </Button>
             </div>
 
             <dl className="mt-10 space-y-5">
               <ContactRow icon={<Phone className="h-5 w-5" />} label="Phone / WhatsApp" value={contact.phone} href={contact.phoneHref} />
-              <ContactRow icon={<Mail className="h-5 w-5" />} label="Email" value={contact.email} href={`mailto:${contact.email}`} />
+              <ContactRow icon={<Mail className="h-5 w-5" />} label="Email" value={contact.email} href={gmailHref()} />
               <ContactRow icon={<Clock className="h-5 w-5" />} label="Business Hours" value={contact.hours} />
               <ContactRow icon={<Package className="h-5 w-5" />} label="Minimum Order" value={contact.moq} />
               <ContactRow icon={<MapPin className="h-5 w-5" />} label="Payment Terms" value={contact.paymentTerms} />
@@ -211,8 +218,14 @@ function ContactRow({
   value: string;
   href?: string;
 }) {
+  const external = href?.startsWith("http");
   const valueEl = href ? (
-    <a href={href} className="font-medium text-ink transition-colors hover:text-teal-600">
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="font-medium text-ink transition-colors hover:text-teal-600"
+    >
       {value}
     </a>
   ) : (

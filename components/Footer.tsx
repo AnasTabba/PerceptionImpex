@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/Logo";
 import { WhatsApp, Mail, Phone } from "@/components/ui/Icons";
-import { company, contact, nav, products, whatsappHref } from "@/lib/content";
+import { company, contact, nav, products, whatsappHref, gmailHref } from "@/lib/content";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -28,7 +28,9 @@ export function Footer() {
                 <WhatsApp className="h-5 w-5" />
               </a>
               <a
-                href={`mailto:${contact.email}`}
+                href={gmailHref()}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Email"
                 className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-teal-500"
               >
@@ -77,7 +79,7 @@ export function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-wide-label text-white/40">Get in Touch</h3>
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li>
-                <a href={`mailto:${contact.email}`} className="transition-colors hover:text-white">
+                <a href={gmailHref()} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
                   {contact.email}
                 </a>
               </li>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { contact, whatsappHref, mailtoHref } from "@/lib/content";
+import { contact, whatsappHref, gmailHref } from "@/lib/content";
 import { WhatsApp, Mail } from "@/components/ui/Icons";
 
 /**
@@ -34,7 +34,9 @@ export function FloatingContact() {
         <WhatsApp className="h-7 w-7" />
       </a>
       <a
-        href={mailtoHref()}
+        href={gmailHref()}
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label={`Email ${contact.email}`}
         className="grid h-14 w-14 place-items-center rounded-full bg-ink text-white shadow-lift transition-transform duration-200 hover:scale-105 active:scale-95"
       >

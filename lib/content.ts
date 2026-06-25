@@ -46,6 +46,22 @@ export function mailtoHref(
   return `mailto:${contact.email}?${parts.join("&")}`;
 }
 
+// Opens the Gmail web compose window pre-addressed to us (new tab).
+// Reliable for visitors who use Gmail in the browser, with no OS mail-app needed.
+export function gmailHref(
+  subject = "Yarn Sourcing Inquiry",
+  body = "",
+): string {
+  const params = new URLSearchParams({
+    view: "cm",
+    fs: "1",
+    to: contact.email,
+    su: subject,
+  });
+  if (body) params.set("body", body);
+  return `https://mail.google.com/mail/?${params.toString()}`;
+}
+
 export const stats = [
   { value: 26, suffix: "+", label: "Years in Business" },
   { value: 1, prefix: "PKR ", suffix: "B+", label: "Annual Trade Volume" },
