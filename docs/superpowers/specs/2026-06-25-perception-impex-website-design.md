@@ -55,9 +55,13 @@ Design direction: Apple-style storytelling + industrial textile professionalism.
 6. **Why us / core strengths** — trust grid: 26 yrs experience, strong supplier relationships,
    competitive pricing, reliable supply chain, flexible payment terms, fast procurement,
    consistent quality, dedicated support, high-volume capability, long-term relationships.
-7. **Suppliers & clients** — partner mills (Gul Ahmed, Bhanero, Premium Textile) and client
-   references (Unique Textiles, AOL Apparel, Zunaira, Multimat, Redox Fashion, Al Zainab & Sons)
-   shown as a trust row / logo-style treatment (text-based until real logos available).
+7. **Suppliers & clients** — partner mills shown as a logo trust row. **Real logos available**
+   in `suppliers_logo/`: Gul Ahmed (`gulahmedlogo.png`), Premium Textile Mills
+   (`premiumtextileslogo.png`), Unique Textile (`uniquelogo.png`). Bhanero shown as a text
+   entry (no logo yet). Logos normalized into uniform partner cards (equal height, consistent
+   padding, centered) since source files differ in aspect ratio and background. Client
+   references (AOL Apparel, Zunaira, Multimat, Redox Fashion, Al Zainab & Sons) shown as a
+   text-based trust list.
 8. **Heritage timeline** — "Since 2000" story arc communicating 26 years of relationships.
 9. **Quote request form** — 11 fields (Name, Company, Email, Phone, WhatsApp, Country, Yarn
    Type, Quantity Required, Monthly Requirement, Payment Terms Required, Message). Wired to
@@ -94,7 +98,9 @@ leaves room to add them later.
 
 - Any backend/server, authentication, database, or dynamic data.
 - The "Future Features" list in `info.md`.
-- Real logo asset (placeholder only) and real partner/client logo images (text treatment only).
+- Company logo asset (placeholder only — not yet ready).
+- Partner logos for Bhanero and real client logos (text treatment only); the three supplied
+  supplier logos (Gul Ahmed, Premium Textile Mills, Unique Textile) ARE used.
 
 ## 9. Open items (non-blocking)
 
