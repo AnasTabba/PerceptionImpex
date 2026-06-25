@@ -6,13 +6,13 @@ export const company = {
   shortName: "Perception Impex",
   tagline: "Connecting Quality Yarn with Global Manufacturing Excellence",
   founded: 2000,
-  yearsLabel: "26 Years",
+  yearsLabel: "25+ Years",
   founder: "Muhammad Basheer Tabba",
-  heroHeadline: "26 Years of Trusted Yarn Trading Excellence",
+  heroHeadline: "25+ Years of Trusted Yarn Trading Excellence",
   heroSubline:
     "Supplying high-quality cotton, PC, CVC, and specialty yarns through strong relationships with Pakistan's leading spinning mills. Trusted by manufacturers and exporters since 2000.",
   overview:
-    "Perception Impex is a Pakistan-based yarn trading and sourcing company established in 2000. For over 26 years we have built strong relationships with Pakistan's leading spinning and textile mills, enabling manufacturers and exporters to secure high-quality yarn at competitive rates with reliable delivery schedules.",
+    "Perception Impex is a Pakistan-based yarn trading and sourcing company established in 2000. For over 25 years we have built strong relationships with Pakistan's leading spinning and textile mills, enabling manufacturers and exporters to secure high-quality yarn at competitive rates with reliable delivery schedules.",
   mission:
     "To provide textile manufacturers with reliable access to high-quality yarn through strong supplier relationships, competitive pricing, transparent business practices, and dependable service.",
   vision:
@@ -63,7 +63,7 @@ export function gmailHref(
 }
 
 export const stats = [
-  { value: 26, suffix: "+", label: "Years in Business" },
+  { value: 25, suffix: "+", label: "Years in Business" },
   { value: 1, prefix: "PKR ", suffix: "B+", label: "Annual Trade Volume" },
   { value: 15, suffix: "–20+", label: "Partner Mills" },
   { value: 5, suffix: "+", label: "Countries Served" },
@@ -232,7 +232,7 @@ export const founder = {
 };
 
 export const strengths = [
-  { title: "26 Years Experience", desc: "Decades of industry relationships and market knowledge." },
+  { title: "25+ Years Experience", desc: "Decades of industry relationships and market knowledge." },
   { title: "Strong Supplier Network", desc: "Direct access to Pakistan's leading spinning mills." },
   { title: "Competitive Pricing", desc: "Market-aligned rates backed by trusted partnerships." },
   { title: "Reliable Supply Chain", desc: "Dependable delivery schedules and supply continuity." },
@@ -308,19 +308,19 @@ export const timeline = [
     desc: `${company.founder} establishes Perception Impex as a dedicated yarn trading and sourcing house.`,
   },
   {
-    year: "2008",
+    year: "2009",
     title: "Mill Network Expands",
     desc: "Partnerships deepen with leading spinning mills, broadening yarn varieties and supply capacity.",
   },
   {
-    year: "2015",
+    year: "2016",
     title: "Export Markets",
     desc: "Sourcing relationships extend to serve international manufacturers and exporters.",
   },
   {
     year: "Today",
     title: "A Trusted Partner",
-    desc: "26+ years on, supplying cotton, PC, CVC, and specialty yarns at scale with PKR 1B+ annual trade volume.",
+    desc: "25+ years on, supplying cotton, PC, CVC, and specialty yarns at scale with PKR 1B+ annual trade volume.",
   },
 ];
 

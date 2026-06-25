@@ -33,7 +33,7 @@ export function Hero() {
 
           <Reveal delay={60}>
             <h1 className="font-display text-[2rem] font-bold leading-[1.08] tracking-tight-display text-ink xs:text-[2.5rem] sm:text-5xl sm:leading-[1.03] lg:text-6xl">
-              26 Years of <span className="text-shimmer">Trusted Yarn</span> Trading Excellence
+              25+ Years of <span className="text-shimmer">Trusted Yarn</span> Trading Excellence
             </h1>
           </Reveal>
 

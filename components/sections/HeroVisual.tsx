@@ -66,7 +66,7 @@ export function HeroVisual() {
 
       {/* Floating heritage badge */}
       <div className="animate-float absolute -bottom-5 -left-3 rounded-xl bg-surface px-5 py-4 shadow-lift ring-1 ring-stone-200 sm:-left-5">
-        <p className="font-display text-3xl font-bold leading-none text-teal-500">26+</p>
+        <p className="font-display text-3xl font-bold leading-none text-teal-500">25+</p>
         <p className="mt-1 text-xs font-medium uppercase tracking-wide-label text-ink-muted">
           Years Trading
         </p>

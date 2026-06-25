@@ -9,7 +9,7 @@ export function About() {
       <Container>
         <SectionHeading
           eyebrow="Our Story"
-          title="26 years of trusted relationships"
+          title="25+ years of trusted relationships"
           description={company.overview}
         />
 
