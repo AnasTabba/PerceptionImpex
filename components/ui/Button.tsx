@@ -4,7 +4,7 @@ type Variant = "primary" | "secondary" | "ghost" | "onDark";
 type Size = "md" | "lg";
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 ease-out-expo focus-visible:outline-none disabled:opacity-50 disabled:cursor-not-allowed";
+  "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition duration-200 ease-out-expo [touch-action:manipulation] disabled:opacity-50 disabled:cursor-not-allowed";
 
 const sizes: Record<Size, string> = {
   md: "h-11 px-5 text-sm",

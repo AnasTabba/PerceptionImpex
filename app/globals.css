@@ -18,6 +18,16 @@
     overflow-x: hidden; /* guard against any incidental horizontal scroll */
   }
 
+  /* Remove tap delay on interactive elements */
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+
   /* Consistent, accessible focus ring across interactive elements */
   :where(a, button, input, select, textarea, [tabindex]):focus-visible {
     outline: 2px solid theme("colors.teal.500");

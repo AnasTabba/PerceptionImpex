@@ -86,7 +86,7 @@ export function GlobalReach() {
               const [dx, dy] = project(d.lon, d.lat);
               return (
                 <g key={d.name} style={{ opacity: inView ? 1 : 0, transition: "opacity 0.4s ease-out", transitionDelay: `${0.9 + i * 0.35}s` }}>
-                  <circle cx={dx} cy={dy} r={6} fill="none" stroke="#5EEAD4" strokeWidth={1.5} className="origin-center animate-pulse-ring [transform-box:fill-box]" style={{ transformOrigin: `${dx}px ${dy}px` }} />
+                  <circle cx={dx} cy={dy} r={6} fill="none" stroke="#5EEAD4" strokeWidth={1.5} className="animate-pulse-ring [transform-box:fill-box]" style={{ transformOrigin: "center" }} />
                   <circle cx={dx} cy={dy} r={3.4} fill="#5EEAD4" />
                   <circle cx={dx} cy={dy} r={1.5} fill="#0A4D47" />
                 </g>
@@ -95,7 +95,7 @@ export function GlobalReach() {
 
             {/* Origin marker (Pakistan) */}
             <g>
-              <circle cx={ox} cy={oy} r={7} fill="none" stroke="#F6F4EF" strokeWidth={1.5} className="animate-pulse-ring" style={{ transformOrigin: `${ox}px ${oy}px` }} />
+              <circle cx={ox} cy={oy} r={7} fill="none" stroke="#F6F4EF" strokeWidth={1.5} className="animate-pulse-ring [transform-box:fill-box]" style={{ transformOrigin: "center" }} />
               <circle cx={ox} cy={oy} r={4} fill="#F6F4EF" />
               <circle cx={ox} cy={oy} r={1.8} fill="#0F766E" />
             </g>
