@@ -21,7 +21,7 @@ const prefersReducedMotion = () =>
  */
 export function CountUp({
   end,
-  duration = 2000,
+  duration = 1500,
   prefix = "",
   suffix = "",
   className = "",

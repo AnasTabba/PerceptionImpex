@@ -122,8 +122,27 @@ export const products: Product[] = [
       "Jackets",
       "Tracksuits",
     ],
+    image: {
+      src: "/images/yarn-jacquard.webp",
+      alt: "Jacquard and specialty yarn production on a modern spinning floor",
+      w: 692,
+      h: 443,
+    },
   },
 ];
+
+export const founder = {
+  name: "Muhammad Basheer Tabba",
+  role: "Founder",
+  since: 2000,
+  initials: "MBT",
+  paragraphs: [
+    "Perception Impex was founded in 2000 by Muhammad Basheer Tabba, whose vision was to create a trading company built on trust, consistency, and lasting industry relationships.",
+    "For more than two decades, the company has worked alongside textile manufacturers, exporters, and spinning mills, developing a reputation for reliability and professionalism within Pakistan's textile sector.",
+    "Under his leadership, Perception Impex has grown into a trusted yarn sourcing and trading partner, connecting manufacturers with quality yarn solutions while maintaining the highest standards of service and business integrity.",
+    "Today, the company continues to build on that legacy, combining decades of industry knowledge with a commitment to supporting the evolving needs of modern textile businesses.",
+  ],
+};
 
 export const strengths = [
   { title: "26 Years Experience", desc: "Decades of industry relationships and market knowledge." },

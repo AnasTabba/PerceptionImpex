@@ -52,10 +52,10 @@
   /* Reveal-on-scroll: starts hidden, .is-visible reveals (fade + rise + settle) */
   .reveal {
     opacity: 0;
-    transform: translateY(42px) scale(0.98);
+    transform: translateY(34px) scale(0.985);
     transition:
-      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
   .reveal.is-visible {
@@ -118,9 +118,9 @@
   /* Card hover: lift + deepen shadow. Always on (subtle, not vestibular). */
   .hover-lift {
     transition:
-      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-      border-color 0.35s ease;
+      transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.28s ease;
   }
   .count-pop {
     animation: count-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1);

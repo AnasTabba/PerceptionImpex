@@ -1,26 +1,58 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { useParallax } from "@/lib/useParallax";
 
-/** Hero image panel with a subtle scroll parallax on the photo + floating badge. */
+/**
+ * Hero image panel with a buttery scroll parallax: the transform is written
+ * straight to the DOM inside requestAnimationFrame (no per-frame React renders).
+ */
 export function HeroVisual() {
-  const { ref, offset } = useParallax<HTMLDivElement>(-0.06);
+  const frameRef = useRef<HTMLDivElement | null>(null);
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const frame = frameRef.current;
+      const img = imgRef.current;
+      if (!frame || !img) return;
+      const rect = frame.getBoundingClientRect();
+      const elementCenter = rect.top + rect.height / 2;
+      const delta = (elementCenter - window.innerHeight / 2) * -0.06;
+      img.style.transform = `translate3d(0, ${delta.toFixed(2)}px, 0) scale(1.12)`;
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
 
   return (
     <div className="relative">
       <div
-        ref={ref}
+        ref={frameRef}
         className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lift ring-1 ring-stone-200 sm:aspect-[5/5] lg:aspect-[4/5]"
       >
         <Image
+          ref={imgRef}
           src="/images/yarn-warehouse.webp"
           alt="Rows of premium yarn cones in a spinning mill warehouse"
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 560px"
-          className="scale-110 object-cover"
-          style={{ transform: `translateY(${offset}px) scale(1.1)`, willChange: "transform" }}
+          className="object-cover [transform:scale(1.12)] [will-change:transform]"
         />
         <div
           aria-hidden
