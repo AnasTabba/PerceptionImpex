@@ -22,6 +22,10 @@ export function SectionHeading({
       <p className="mb-3 text-xs font-semibold uppercase tracking-wide-label text-teal-600">
         {eyebrow}
       </p>
+      <span
+        className={`accent-rule mb-5 ${align === "center" ? "mx-auto [transform-origin:center]" : ""}`}
+        aria-hidden
+      />
       <h2 className="font-display text-3xl font-bold leading-[1.08] tracking-tight-display text-ink sm:text-4xl lg:text-[2.75rem] text-balance">
         {title}
       </h2>

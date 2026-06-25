@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { HeroVisual } from "@/components/sections/HeroVisual";
 import { ArrowRight, Check } from "@/components/ui/Icons";
 import { company } from "@/lib/content";
 
@@ -33,7 +33,7 @@ export function Hero() {
 
           <Reveal delay={60}>
             <h1 className="font-display text-[1.85rem] font-extrabold leading-[1.1] tracking-tight-display text-ink xs:text-4xl sm:text-5xl sm:leading-[1.04] lg:text-6xl">
-              26 Years of <span className="text-teal-500">Trusted Yarn</span> Trading Excellence
+              26 Years of <span className="text-shimmer">Trusted Yarn</span> Trading Excellence
             </h1>
           </Reveal>
 
@@ -68,34 +68,9 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Image panel */}
-        <Reveal delay={120} className="relative">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lift ring-1 ring-stone-200 sm:aspect-[5/5] lg:aspect-[4/5]">
-            <Image
-              src="/images/yarn-warehouse.webp"
-              alt="Rows of premium yarn cones in a spinning mill warehouse"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 560px"
-              className="object-cover"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(7,58,53,0) 45%, rgba(7,58,53,0.55) 100%)",
-              }}
-            />
-          </div>
-
-          {/* Floating heritage badge */}
-          <div className="animate-float absolute -bottom-5 -left-3 rounded-xl bg-surface px-5 py-4 shadow-lift ring-1 ring-stone-200 sm:-left-5">
-            <p className="font-display text-3xl font-extrabold leading-none text-teal-500">26+</p>
-            <p className="mt-1 text-xs font-medium uppercase tracking-wide-label text-ink-muted">
-              Years Trading
-            </p>
-          </div>
+        {/* Image panel (parallax + floating badge) */}
+        <Reveal delay={120}>
+          <HeroVisual />
         </Reveal>
       </Container>
     </section>

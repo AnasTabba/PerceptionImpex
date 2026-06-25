@@ -49,10 +49,10 @@
     font-variant-numeric: tabular-nums;
   }
 
-  /* Reveal-on-scroll: starts hidden, .is-visible reveals (fade + rise) */
+  /* Reveal-on-scroll: starts hidden, .is-visible reveals (fade + rise + settle) */
   .reveal {
     opacity: 0;
-    transform: translateY(32px);
+    transform: translateY(42px) scale(0.98);
     transition:
       opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
       transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -60,7 +60,59 @@
   }
   .reveal.is-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+  }
+
+  /* Shimmering accent text (moving highlight) */
+  .text-shimmer {
+    background: linear-gradient(
+      100deg,
+      theme("colors.teal.600") 20%,
+      theme("colors.teal.300") 45%,
+      theme("colors.teal.600") 70%
+    );
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text-shine 5s linear infinite;
+  }
+
+  /* Continuous logo marquee */
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+
+  /* Heading accent underline that grows in when revealed */
+  .accent-rule {
+    display: block;
+    height: 3px;
+    width: 3rem;
+    border-radius: 999px;
+    background: theme("colors.teal.500");
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+  }
+  .reveal.is-visible .accent-rule,
+  .accent-rule.is-visible {
+    transform: scaleX(1);
   }
 
   /* Card hover: lift + deepen shadow. Always on (subtle, not vestibular). */
@@ -157,6 +209,21 @@
   }
 }
 
+@keyframes text-shine {
+  to {
+    background-position: 220% center;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @keyframes drift {
   0% {
     transform: translate3d(0, 0, 0) scale(1);
@@ -188,7 +255,15 @@
   .animate-float,
   .animate-drift,
   .animate-pulse-ring,
+  .animate-marquee,
+  .text-shimmer,
   .count-pop {
     animation: none !important;
+  }
+  .text-shimmer {
+    color: theme("colors.teal.600");
+  }
+  .accent-rule {
+    transform: scaleX(1);
   }
 }
