@@ -40,10 +40,10 @@ export function mailtoHref(
   subject = "Yarn Sourcing Inquiry",
   body = "",
 ): string {
-  const params = new URLSearchParams();
-  params.set("subject", subject);
-  if (body) params.set("body", body);
-  return `mailto:${contact.email}?${params.toString()}`;
+  // Encode with %20 (not URLSearchParams' "+") for maximum mail-client compatibility.
+  const parts = [`subject=${encodeURIComponent(subject)}`];
+  if (body) parts.push(`body=${encodeURIComponent(body)}`);
+  return `mailto:${contact.email}?${parts.join("&")}`;
 }
 
 export const stats = [
@@ -144,26 +144,42 @@ export type Supplier = {
 export const suppliers: Supplier[] = [
   {
     name: "Gul Ahmed Textile Mills",
-    logo: { src: "/images/suppliers/gul-ahmed.webp", alt: "Gul Ahmed Textile Mills", w: 237, h: 27 },
+    logo: { src: "/images/suppliers/gul-ahmed.webp", alt: "Gul Ahmed Textile Mills logo", w: 237, h: 27 },
   },
   {
     name: "Premium Textile Mills",
-    logo: { src: "/images/suppliers/premium-textile.webp", alt: "Premium Textile Mills", w: 1570, h: 678 },
+    logo: { src: "/images/suppliers/premium-textile.webp", alt: "Premium Textile Mills logo", w: 1570, h: 678 },
   },
   {
-    name: "Unique Textile",
-    logo: { src: "/images/suppliers/unique-textile.webp", alt: "Unique Textile", w: 300, h: 281 },
+    name: "Bhanero Textile Mills",
+    logo: { src: "/images/suppliers/bhanero.webp", alt: "Bhanero Textile Mills logo", w: 600, h: 600 },
   },
-  { name: "Bhanero Textile Mills" },
 ];
 
-export const clients = [
-  "Unique Textiles",
-  "AOL Apparel",
-  "Zunaira",
-  "Multimat",
-  "Redox Fashion",
-  "Al Zainab & Sons",
+export type Client = {
+  name: string;
+  logo?: { src: string; alt: string; w: number; h: number };
+};
+
+export const clients: Client[] = [
+  {
+    name: "Unique Textiles",
+    logo: { src: "/images/clients/unique.webp", alt: "Unique Textiles logo", w: 300, h: 281 },
+  },
+  {
+    name: "AOL Apparel",
+    logo: { src: "/images/clients/aol.webp", alt: "AOL Apparel logo", w: 250, h: 171 },
+  },
+  {
+    name: "Multimat",
+    logo: { src: "/images/clients/multimat.webp", alt: "Multimat International logo", w: 750, h: 201 },
+  },
+  {
+    name: "Redox Fashion",
+    logo: { src: "/images/clients/redox.webp", alt: "Redox Fashion logo", w: 200, h: 200 },
+  },
+  { name: "Zunaira" },
+  { name: "Al Zainab & Sons" },
 ];
 
 export const customerSegments = [
