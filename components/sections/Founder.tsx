@@ -16,25 +16,35 @@ export function Founder() {
         <div className="mt-14 grid items-start gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
           {/* Founder identity card */}
           <Reveal>
-            <div className="hover-lift relative overflow-hidden rounded-2xl bg-teal-700 p-8 text-white shadow-soft hover:shadow-lift sm:p-10">
-              {/* decorative drifting glow */}
+            <div className="hover-lift relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-700 via-teal-800 to-teal-900 p-8 text-white shadow-soft ring-1 ring-teal-600/40 hover:shadow-lift sm:p-10">
+              {/* decorative drifting brand glow */}
               <div
                 aria-hidden
                 className="animate-drift pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full"
-                style={{ background: "radial-gradient(circle, rgba(255,255,255,0.12), transparent 65%)" }}
+                style={{ background: "radial-gradient(circle, rgba(87,167,156,0.30), transparent 65%)" }}
+              />
+              {/* subtle grid texture */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 opacity-[0.06]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+                  backgroundSize: "28px 28px",
+                }}
               />
               <div className="relative">
-                <span className="grid h-20 w-20 place-items-center rounded-full bg-white/10 font-display text-2xl font-extrabold tracking-tight-display ring-1 ring-white/20">
+                <span className="grid h-20 w-20 place-items-center rounded-full bg-teal-500/25 font-display text-2xl font-extrabold tracking-tight-display text-teal-50 ring-1 ring-teal-300/40">
                   {founder.initials}
                 </span>
                 <h3 className="mt-7 font-display text-2xl font-bold tracking-tight-display sm:text-3xl">
                   {founder.name}
                 </h3>
-                <p className="mt-2 text-sm font-semibold uppercase tracking-wide-label text-teal-100">
+                <p className="mt-2 text-sm font-semibold uppercase tracking-wide-label text-teal-200">
                   {founder.role} · Since {founder.since}
                 </p>
-                <div className="mt-8 border-t border-white/15 pt-6">
-                  <p className="text-lg italic leading-relaxed text-white/85">
+                <div className="mt-8 border-t border-teal-300/25 pt-6">
+                  <p className="text-lg italic leading-relaxed text-teal-50/90">
                     “Built on trust, consistency, and lasting industry relationships.”
                   </p>
                 </div>
