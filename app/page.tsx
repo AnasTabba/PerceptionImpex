@@ -7,6 +7,8 @@ import { GlobalReach } from "@/components/sections/GlobalReach";
 import { Strengths } from "@/components/sections/Strengths";
 import { Partners } from "@/components/sections/Partners";
 import { About } from "@/components/sections/About";
+import { Quote } from "@/components/sections/Quote";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -20,7 +22,9 @@ export default function Home() {
         <Strengths />
         <Partners />
         <About />
+        <Quote />
       </main>
+      <Footer />
       <FloatingContact />
     </>
   );
