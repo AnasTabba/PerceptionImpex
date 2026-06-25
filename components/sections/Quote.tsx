@@ -143,13 +143,13 @@ export function Quote() {
               </Button>
             </div>
 
-            <dl className="mt-10 space-y-5">
+            <ul className="mt-10 space-y-5">
               <ContactRow icon={<Phone className="h-5 w-5" />} label="Phone / WhatsApp" value={contact.phone} href={contact.phoneHref} />
               <ContactRow icon={<Mail className="h-5 w-5" />} label="Email" value={contact.email} href={gmailHref()} />
               <ContactRow icon={<Clock className="h-5 w-5" />} label="Business Hours" value={contact.hours} />
               <ContactRow icon={<Package className="h-5 w-5" />} label="Minimum Order" value={contact.moq} />
               <ContactRow icon={<MapPin className="h-5 w-5" />} label="Payment Terms" value={contact.paymentTerms} />
-            </dl>
+            </ul>
           </div>
 
           {/* Right: form / success */}
@@ -170,7 +170,13 @@ export function Quote() {
                 </Button>
               </div>
             ) : (
-              <form ref={formRef} onSubmit={handleSubmit} noValidate>
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                action={formspreeAction || undefined}
+                method="POST"
+                noValidate
+              >
                 <div className="grid gap-5 sm:grid-cols-2">
                   {quoteFields.map((field) => (
                     <FieldControl key={field.name} field={field} />
@@ -232,14 +238,14 @@ function ContactRow({
     <span className="font-medium text-ink">{value}</span>
   );
   return (
-    <div className="flex items-start gap-4">
+    <li className="flex items-start gap-4">
       <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-full bg-teal-500/10 text-teal-600">
         {icon}
       </span>
       <div>
-        <dt className="text-xs font-semibold uppercase tracking-wide-label text-ink-muted">{label}</dt>
-        <dd className="mt-0.5">{valueEl}</dd>
+        <p className="text-xs font-semibold uppercase tracking-wide-label text-ink-muted">{label}</p>
+        <div className="mt-0.5">{valueEl}</div>
       </div>
-    </div>
+    </li>
   );
 }

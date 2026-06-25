@@ -5,6 +5,19 @@
 @layer base {
   :root {
     scroll-behavior: smooth;
+
+    /* Brand design tokens — single source of truth for colors.
+       Includes the logo's navy + gold so the palette isn't duo-chromatic. */
+    --color-canvas: #f6f4ef;
+    --color-surface: #ffffff;
+    --color-ink: #1a1b19;
+    --color-ink-soft: #3a3c38;
+    --color-ink-muted: #6b6d67;
+    --color-brand: #0f766e; /* teal — primary accent */
+    --color-brand-dark: #0a4d47;
+    --color-navy: #16245c; /* logo navy */
+    --color-gold: #c2a063; /* logo gold */
+    --radius-card: 1.25rem;
   }
 
   html {

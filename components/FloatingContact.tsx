@@ -20,6 +20,7 @@ export function FloatingContact() {
 
   return (
     <div
+      {...(!visible ? ({ inert: "" } as Record<string, string>) : {})}
       className={`fixed bottom-5 right-5 z-40 flex flex-col gap-3 transition duration-300 ease-out-expo ${
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
       }`}

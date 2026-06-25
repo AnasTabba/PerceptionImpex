@@ -114,7 +114,10 @@ export function Header() {
           this fixed element. */}
       <div
         id="mobile-menu"
-        aria-hidden={!open}
+        // `inert` (when closed) removes the menu's links/buttons from the tab
+        // order and accessibility tree — so no interactive elements live inside
+        // a hidden container. Cast avoids React 18 JSX typing gap for `inert`.
+        {...(!open ? ({ inert: "" } as Record<string, string>) : {})}
         className={`fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col overflow-y-auto overscroll-contain border-t border-stone-200 bg-canvas transition-all duration-300 ease-out-expo lg:hidden ${
           open
             ? "visible translate-y-0 opacity-100"

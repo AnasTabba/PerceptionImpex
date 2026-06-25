@@ -48,7 +48,7 @@ export function Footer() {
 
           {/* Explore */}
           <nav aria-label="Footer">
-            <h3 className="text-xs font-semibold uppercase tracking-wide-label text-white/40">Explore</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wide-label text-white/60">Explore</h3>
             <ul className="mt-5 space-y-3">
               {nav.map((item) => (
                 <li key={item.href}>
@@ -62,7 +62,7 @@ export function Footer() {
 
           {/* Products */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wide-label text-white/40">Yarns</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wide-label text-white/60">Yarns</h3>
             <ul className="mt-5 space-y-3">
               {products.map((p) => (
                 <li key={p.id}>
@@ -76,7 +76,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wide-label text-white/40">Get in Touch</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wide-label text-white/60">Get in Touch</h3>
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li>
                 <a href={gmailHref()} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">
@@ -95,7 +95,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {year} {company.name}. All rights reserved.
           </span>

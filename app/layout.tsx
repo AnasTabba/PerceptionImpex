@@ -65,6 +65,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <head>
+        {/*
+          Security headers as meta tags. These apply immediately (even before
+          host-level HTTP headers are configured) and satisfy meta-tag scanners.
+          frame-ancestors / X-Frame-Options still need the HTTP header (in
+          render.yaml) since browsers ignore them via meta.
+        */}
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; upgrade-insecure-requests"
+        />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         {/* If JS is disabled, reveal all content immediately (no hidden sections). */}
         <noscript>
           <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
