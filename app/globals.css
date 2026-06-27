@@ -52,6 +52,14 @@
     background: theme("colors.teal.500");
     color: #fff;
   }
+
+  /* Yarn-ball cursor: hide the native pointer once the custom cursor is live.
+     The class is only added on fine-pointer (desktop) devices, so touch and
+     reduced-motion users keep the standard cursor. */
+  html.yarn-cursor-active,
+  html.yarn-cursor-active * {
+    cursor: none !important;
+  }
 }
 
 @layer utilities {

@@ -103,10 +103,18 @@ export default function RootLayout({
           frame-ancestors / X-Frame-Options still need the HTTP header (in
           render.yaml) since browsers ignore them via meta.
         */}
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; upgrade-insecure-requests"
-        />
+        {/*
+          Only emit the strict CSP in production. Next.js dev mode (HMR / React
+          Refresh) relies on `eval`, which a script-src without 'unsafe-eval'
+          blocks — that breaks hydration and leaves the page blank in dev. The
+          production static export needs no eval, so the policy stays strict there.
+        */}
+        {process.env.NODE_ENV === "production" && (
+          <meta
+            httpEquiv="Content-Security-Policy"
+            content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; upgrade-insecure-requests"
+          />
+        )}
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         {/* If JS is disabled, reveal all content immediately (no hidden sections). */}
         <noscript>
