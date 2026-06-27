@@ -163,7 +163,7 @@ export function Quote() {
                 <p className="mt-3 max-w-sm text-ink-soft">
                   {formspreeAction
                     ? "Your request has been received. Our team will get back to you with availability and pricing shortly."
-                    : "Your details have been prepared in WhatsApp — send the message to reach our team directly."}
+                    : "Your details have been prepared in WhatsApp. Send the message to reach our team directly."}
                 </p>
                 <Button className="mt-8" variant="ghost" onClick={() => setStatus("idle")}>
                   Submit another request

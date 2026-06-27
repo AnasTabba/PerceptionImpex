@@ -44,7 +44,7 @@ export function GlobalReach() {
         <SectionHeading
           eyebrow="Global Reach"
           title={<span className="text-white">Sourced in Pakistan, supplied worldwide</span>}
-          description="From our mill network in Pakistan, we supply manufacturers and exporters across international markets — including the United States, Canada, and the United Kingdom."
+          description="From our mill network in Pakistan, we supply manufacturers and exporters across international markets, including the United States, Canada, and the United Kingdom."
           align="center"
           className="[&_p]:text-white/70"
         />

@@ -53,7 +53,7 @@ export function YarnCatalog() {
         <SectionHeading
           eyebrow="Yarn Range"
           title="The complete yarn range we supply"
-          description="Yarn is all we do. From coarse to fine counts, carded to combed, plied to core-spun, and package-dyed to gassed mercerized — we source the full spectrum for knitting, weaving, towels, socks, and crochet."
+          description="Yarn is all we do. From coarse to fine counts, carded to combed, plied to core-spun, and package-dyed to gassed mercerized, we source the full spectrum for knitting, weaving, towels, socks, and crochet."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -64,7 +64,7 @@ export function YarnCatalog() {
 
         <Reveal className="mt-6">
           <p className="text-sm italic leading-relaxed text-ink-muted">
-            Representative range — counts, plies, and blends are sourced to requirement from our
+            Representative range. Counts, plies, and blends are sourced to requirement from our
             mill network. Specifications can vary by order and availability.
           </p>
         </Reveal>

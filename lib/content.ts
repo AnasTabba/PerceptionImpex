@@ -12,7 +12,7 @@ export const company = {
   heroSubline:
     "Supplying high-quality cotton, PC, CVC, and specialty yarns through strong relationships with Pakistan's leading spinning mills. Trusted by manufacturers and exporters since 2000.",
   overview:
-    "Perception Impex is one of Pakistan's trusted yarn suppliers and dealers — a yarn trading and sourcing company established in 2000. For over 25 years we have built strong relationships with Pakistan's leading spinning and textile mills, enabling manufacturers and exporters to secure high-quality yarn at competitive rates with reliable delivery schedules.",
+    "Perception Impex is one of Pakistan's trusted yarn suppliers and dealers, a yarn trading and sourcing company established in 2000. For over 25 years we have built strong relationships with Pakistan's leading spinning and textile mills, enabling manufacturers and exporters to secure high-quality yarn at competitive rates with reliable delivery schedules.",
   mission:
     "To provide textile manufacturers with reliable access to high-quality yarn through strong supplier relationships, competitive pricing, transparent business practices, and dependable service.",
   vision:
@@ -388,7 +388,7 @@ export const faqs = [
   },
   {
     q: "Which yarn types and counts do you supply?",
-    a: "We supply cotton, PC, and CVC yarns plus specialty yarns — carded, combed, compact Siro, plied, core-spun, slub, package/cone-dyed, and gassed mercerized — across a wide count range (e.g. Ne 8s to Ne 40s and multiply).",
+    a: "We supply cotton, PC, and CVC yarns plus specialty yarns (carded, combed, compact Siro, plied, core-spun, slub, package/cone-dyed, and gassed mercerized) across a wide count range, e.g. Ne 8s to Ne 40s and multiply.",
   },
   {
     q: "Do you export yarn from Pakistan to other countries?",

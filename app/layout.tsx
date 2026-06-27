@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s · Perception Impex",
   },
   description:
-    "Perception Impex is a top yarn supplier, dealer & exporter in Pakistan — cotton, PC, CVC & specialty yarns sourced from leading spinning mills since 2000. Founded by Muhammad Basheer Tabba. Serving manufacturers, exporters & international buyers.",
+    "Perception Impex is a top yarn supplier, dealer & exporter in Pakistan, sourcing cotton, PC, CVC & specialty yarns from leading spinning mills since 2000. Founded by Muhammad Basheer Tabba. Serving manufacturers, exporters & international buyers.",
   keywords: [
     "yarn supplier",
     "top yarn supplier",

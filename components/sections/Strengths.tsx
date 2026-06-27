@@ -10,7 +10,7 @@ export function Strengths() {
         <SectionHeading
           eyebrow="Why Perception Impex"
           title="A trading partner manufacturers rely on"
-          description="Not a small broker — an experienced trading house with decades of mill relationships, dependable supply, and terms built for real production schedules."
+          description="Not a small broker, but an experienced trading house with decades of mill relationships, dependable supply, and terms built for real production schedules."
         />
 
         <div className="mt-12 grid gap-px overflow-hidden rounded-2xl bg-stone-200 ring-1 ring-stone-200 sm:grid-cols-2 lg:grid-cols-4">

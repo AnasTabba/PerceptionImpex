@@ -10,7 +10,7 @@ export function Founder() {
         <SectionHeading
           eyebrow="Founder & Legacy"
           title="A vision built on trust"
-          description="Decades of industry knowledge, relationships, and integrity — guiding Perception Impex since the beginning."
+          description="Decades of industry knowledge, relationships, and integrity, guiding Perception Impex since the beginning."
         />
 
         <div className="mt-14 grid items-start gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
