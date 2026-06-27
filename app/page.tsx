@@ -1,7 +1,6 @@
 import { Header } from "@/components/Header";
 import { FloatingContact } from "@/components/FloatingContact";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { YarnCursor } from "@/components/YarnCursor";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { Hero } from "@/components/sections/Hero";
 import { Stats } from "@/components/sections/Stats";
@@ -19,7 +18,6 @@ import { Footer } from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <YarnCursor />
       <ScrollProgress />
       <Header />
       <main id="main">
