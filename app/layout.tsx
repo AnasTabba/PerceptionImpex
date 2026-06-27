@@ -27,13 +27,19 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Cotton Yarn Supplier & Exporter in Pakistan | Perception Impex",
+      "Top Yarn Supplier, Dealer & Exporter in Pakistan | Perception Impex",
     template: "%s · Perception Impex",
   },
   description:
-    "Perception Impex is a trusted cotton, PC & CVC yarn supplier and exporter in Pakistan, sourcing quality yarn from leading spinning mills since 2000. Founded by Muhammad Basheer Tabba. Serving manufacturers, exporters & international buyers.",
+    "Perception Impex is a top yarn supplier, dealer & exporter in Pakistan — cotton, PC, CVC & specialty yarns sourced from leading spinning mills since 2000. Founded by Muhammad Basheer Tabba. Serving manufacturers, exporters & international buyers.",
   keywords: [
+    "yarn supplier",
+    "top yarn supplier",
+    "top yarn supplier Pakistan",
+    "yarn dealer",
+    "yarn dealer Pakistan",
     "yarn supplier Pakistan",
+    "yarn trader Pakistan",
     "cotton yarn supplier Pakistan",
     "yarn supplier in Pakistan",
     "yarn exporter Pakistan",
@@ -48,6 +54,7 @@ export const metadata: Metadata = {
     "B2B yarn supplier",
     "Perception Impex",
     "Muhammad Basheer Tabba",
+    "Basheer Tabba",
   ],
   alternates: {
     canonical: "/",

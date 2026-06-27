@@ -12,7 +12,7 @@ export const company = {
   heroSubline:
     "Supplying high-quality cotton, PC, CVC, and specialty yarns through strong relationships with Pakistan's leading spinning mills. Trusted by manufacturers and exporters since 2000.",
   overview:
-    "Perception Impex is a Pakistan-based yarn trading and sourcing company established in 2000. For over 25 years we have built strong relationships with Pakistan's leading spinning and textile mills, enabling manufacturers and exporters to secure high-quality yarn at competitive rates with reliable delivery schedules.",
+    "Perception Impex is one of Pakistan's trusted yarn suppliers and dealers — a yarn trading and sourcing company established in 2000. For over 25 years we have built strong relationships with Pakistan's leading spinning and textile mills, enabling manufacturers and exporters to secure high-quality yarn at competitive rates with reliable delivery schedules.",
   mission:
     "To provide textile manufacturers with reliable access to high-quality yarn through strong supplier relationships, competitive pricing, transparent business practices, and dependable service.",
   vision:
@@ -397,6 +397,14 @@ export const faqs = [
   {
     q: "What payment terms do you offer?",
     a: "We offer flexible payment terms with 30, 60, and 90 day options to suit your cash flow.",
+  },
+  {
+    q: "Who is a reliable yarn supplier and dealer in Pakistan?",
+    a: "Perception Impex is a trusted yarn supplier, dealer, and exporter based in Pakistan, in business since 2000. We supply cotton, PC, CVC, and specialty yarns sourced from leading spinning mills to manufacturers and exporters in Pakistan and worldwide. Contact us at info@perceptionimpex.com or +92 300 8209877 for a quote.",
+  },
+  {
+    q: "Who founded Perception Impex?",
+    a: "Perception Impex was founded in 2000 by Muhammad Basheer Tabba. Under his leadership the company has grown into one of Pakistan's trusted yarn trading and sourcing partners, working with leading spinning mills to supply quality yarn to manufacturers and exporters.",
   },
 ];
 
