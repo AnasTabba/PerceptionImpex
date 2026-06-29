@@ -337,7 +337,7 @@ export const markets = [
 export type FormField = {
   name: string;
   label: string;
-  type: "text" | "email" | "tel" | "select" | "textarea";
+  type: "text" | "email" | "tel" | "url" | "select" | "textarea";
   required: boolean;
   options?: string[];
   autoComplete?: string;
@@ -409,13 +409,14 @@ export const faqs = [
 ];
 
 export const nav = [
-  { label: "Yarns", href: "#products" },
-  { label: "Yarn Range", href: "#yarn-range" },
-  { label: "Global Reach", href: "#global" },
-  { label: "Why Us", href: "#why" },
-  { label: "Partners", href: "#partners" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#quote" },
+  { label: "Yarns", href: "/#products" },
+  { label: "Yarn Range", href: "/#yarn-range" },
+  { label: "Global Reach", href: "/#global" },
+  { label: "Why Us", href: "/#why" },
+  { label: "Partners", href: "/#partners" },
+  { label: "About", href: "/#about" },
+  { label: "Careers", href: "/careers/" },
+  { label: "Contact", href: "/#quote" },
 ];
 
 // Formspree endpoint. Replace the ID once the form is created at formspree.io.
@@ -423,4 +424,183 @@ export const nav = [
 export const FORMSPREE_ID = "";
 export const formspreeAction = FORMSPREE_ID
   ? `https://formspree.io/f/${FORMSPREE_ID}`
+  : "";
+
+// ─── Careers / Internships ──────────────────────────────────────────────────
+
+export type CareerProgram = {
+  id: "aspire" | "elevate";
+  name: string;
+  audience: string;
+  duration: string;
+  blurb: string;
+  employmentType: "INTERN" | "FULL_TIME";
+};
+
+export const careerPrograms: CareerProgram[] = [
+  {
+    id: "aspire",
+    name: "Aspire Summer Internship",
+    audience: "3rd-year (penultimate-year) university students",
+    duration: "6 to 8 weeks, summer",
+    blurb:
+      "A hands-on summer internship for students who want real exposure to how a textile trading house runs. Work alongside our teams, learn the yarn trade from the inside, and build skills you cannot get in a classroom.",
+    employmentType: "INTERN",
+  },
+  {
+    id: "elevate",
+    name: "Elevate Management Trainee Program",
+    audience: "Fresh graduates",
+    duration: "12-month structured trainee track",
+    blurb:
+      "A career-track program for fresh graduates ready to grow into future leaders. Structured rotations, mentorship from senior management, and a clear path into a permanent role within the company.",
+    employmentType: "FULL_TIME",
+  },
+];
+
+export type CareerPosition = {
+  id: string;
+  name: string;
+  blurb: string;
+  programIds: Array<"aspire" | "elevate">;
+};
+
+export const careerPositions: CareerPosition[] = [
+  {
+    id: "finance",
+    name: "Finance & Accounts",
+    blurb: "Support bookkeeping, receivables and payables, and financial reporting.",
+    programIds: ["aspire", "elevate"],
+  },
+  {
+    id: "it",
+    name: "Information Technology (IT)",
+    blurb: "Help maintain internal systems, data, and the tools the business runs on.",
+    programIds: ["aspire"],
+  },
+  {
+    id: "hr",
+    name: "Human Resources (HR)",
+    blurb: "Assist with recruitment, onboarding, and day-to-day people operations.",
+    programIds: ["aspire"],
+  },
+  {
+    id: "sales",
+    name: "Sales & Business Development",
+    blurb: "Support client outreach, lead generation, and account coordination.",
+    programIds: ["aspire", "elevate"],
+  },
+  {
+    id: "supply-chain",
+    name: "Supply Chain & Logistics",
+    blurb: "Help with order fulfilment, dispatch scheduling, and inventory tracking.",
+    programIds: ["aspire", "elevate"],
+  },
+  {
+    id: "impex",
+    name: "Import/Export & Merchandising",
+    blurb: "Assist with trade documentation, export coordination, and merchandising support.",
+    programIds: ["aspire", "elevate"],
+  },
+];
+
+export const careerBenefits = [
+  { title: "Real Industry Exposure", desc: "Work on live trade, not filler tasks. See how yarn moves from mill to manufacturer." },
+  { title: "Senior Mentorship", desc: "Learn directly from a team with 25+ years in the textile trade." },
+  { title: "A 25-Year Network", desc: "Build relationships across Pakistan's leading spinning mills and manufacturers." },
+  { title: "A Path Forward", desc: "Strong performers in the trainee program move into permanent roles." },
+];
+
+// Application form fields. The "program" select is pre-filled by the Apply
+// buttons; options must match careerPrograms names exactly.
+export const careerApplicationFields: FormField[] = [
+  { name: "full_name", label: "Full Name", type: "text", required: true, autoComplete: "name" },
+  { name: "email", label: "Email", type: "email", required: true, autoComplete: "email" },
+  { name: "phone", label: "Phone / WhatsApp", type: "tel", required: true, autoComplete: "tel" },
+  {
+    name: "program",
+    label: "Program",
+    type: "select",
+    required: true,
+    options: ["Aspire Summer Internship", "Elevate Management Trainee Program"],
+  },
+  {
+    name: "position",
+    label: "Position Applied For",
+    type: "select",
+    required: true,
+    options: [
+      "Finance & Accounts",
+      "Information Technology (IT)",
+      "Human Resources (HR)",
+      "Sales & Business Development",
+      "Supply Chain & Logistics",
+      "Import/Export & Merchandising",
+    ],
+  },
+  { name: "university", label: "University / Institution", type: "text", required: true },
+  { name: "degree", label: "Degree / Field of Study", type: "text", required: true },
+  {
+    name: "year",
+    label: "Year / Graduation Year",
+    type: "text",
+    required: true,
+    placeholder: "e.g. 3rd year, 6th semester  or  2026 graduate",
+  },
+  { name: "gpa", label: "CGPA / GPA", type: "text", required: true, placeholder: "e.g. 3.4 / 4.0" },
+  { name: "city", label: "City", type: "text", required: true, autoComplete: "address-level2" },
+  {
+    name: "cv_link",
+    label: "LinkedIn or CV Link",
+    type: "url",
+    required: true,
+    placeholder: "https://drive.google.com/…  or  linkedin.com/in/…",
+  },
+  { name: "availability", label: "Availability / Start Date", type: "text", required: false },
+  {
+    name: "cover_note",
+    label: "Cover Note",
+    type: "textarea",
+    required: false,
+    full: true,
+    placeholder: "Why do you want to join Perception Impex?",
+  },
+];
+
+export const careerFaqs = [
+  {
+    q: "Who can apply to the Aspire Summer Internship?",
+    a: "Students currently in their 3rd (penultimate) year of a university degree. It runs over the summer and is open across all six departments.",
+  },
+  {
+    q: "Who is the Elevate Management Trainee Program for?",
+    a: "Fresh graduates looking for a career-track role. It is a structured 12-month program with rotations and mentorship, leading toward a permanent position.",
+  },
+  {
+    q: "Do I need a CV to apply?",
+    a: "Yes. Paste a link to your CV (a Google Drive link) or your LinkedIn profile in the application form so we can review your background.",
+  },
+  {
+    q: "Is the internship paid?",
+    a: "Stipend and compensation are discussed with shortlisted candidates based on the program and role.",
+  },
+  {
+    q: "How will I hear back?",
+    a: "Our HR team reviews applications and contacts shortlisted candidates by email or phone. Apply through the form on this page.",
+  },
+];
+
+// Static posting date for JobPosting structured data (kept constant so the
+// static export is deterministic). Update when the campaign is refreshed.
+export const CAREERS_POSTED_DATE = "2026-06-29";
+
+// Applications stay open through this date. Google recommends validThrough on JobPostings.
+export const CAREERS_VALID_THROUGH = "2026-12-31";
+
+// Separate Formspree endpoint for applications (distinct from the quote form).
+// Replace once the form is created at formspree.io. While empty, the
+// application form falls back to a pre-filled WhatsApp message.
+export const CAREERS_FORMSPREE_ID = "";
+export const careersFormspreeAction = CAREERS_FORMSPREE_ID
+  ? `https://formspree.io/f/${CAREERS_FORMSPREE_ID}`
   : "";
