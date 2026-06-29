@@ -610,5 +610,6 @@ export const CAREERS_VALID_THROUGH = "2026-12-31";
 // public Cloudflare Turnstile site key. Both are filled once the owner's
 // Supabase project and Turnstile widget exist. While CAREERS_SUBMIT_URL is
 // empty, the form shows an "applications open soon" state (no WhatsApp).
-export const CAREERS_SUBMIT_URL = "";
-export const TURNSTILE_SITE_KEY = "";
+export const CAREERS_SUBMIT_URL =
+  "https://pihsfbgxmpnmogwgvqlk.supabase.co/functions/v1/submit-application";
+export const TURNSTILE_SITE_KEY = "0x4AAAAAADs_uR77o-ZfE1Kt";
