@@ -7,11 +7,15 @@ export function CareersJsonLd() {
     const programs = pos.programIds
       .map((id) => careerPrograms.find((p) => p.id === id))
       .filter((p): p is NonNullable<typeof p> => Boolean(p));
-    const employmentType = Array.from(new Set(programs.map((p) => p.employmentType)));
+    const employmentTypes = Array.from(new Set(programs.map((p) => p.employmentType)));
+    // Emit a plain string when there is one type (Google's canonical JobPosting
+    // shape); fall back to an array only when a role spans both programs.
+    const employmentType =
+      employmentTypes.length === 1 ? employmentTypes[0] : employmentTypes;
     const programNames = programs.map((p) => p.name).join(" and ");
     return {
       "@type": "JobPosting",
-      title: `${pos.name} — ${programNames}`,
+      title: `${pos.name}: ${programNames}`,
       description: `${pos.blurb} Apply through the ${programNames} at Perception Impex, a Pakistan-based yarn trading and sourcing company.`,
       datePosted: CAREERS_POSTED_DATE,
       employmentType,
