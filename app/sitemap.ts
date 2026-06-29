@@ -4,8 +4,6 @@ const SITE_URL = "https://www.perceptionimpex.com";
 
 export const dynamic = "force-static";
 
-// Single-page site: the homepage plus its in-page section anchors are the
-// crawlable surface. Listing the root is sufficient for search engines.
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -13,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
+    },
+    {
+      url: `${SITE_URL}/careers/`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
   ];
 }
