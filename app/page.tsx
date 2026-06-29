@@ -9,6 +9,7 @@ import { YarnCatalog } from "@/components/sections/YarnCatalog";
 import { GlobalReach } from "@/components/sections/GlobalReach";
 import { Strengths } from "@/components/sections/Strengths";
 import { Partners } from "@/components/sections/Partners";
+import { Hiring } from "@/components/sections/Hiring";
 import { About } from "@/components/sections/About";
 import { Founder } from "@/components/sections/Founder";
 import { Faq } from "@/components/sections/Faq";
@@ -29,6 +30,7 @@ export default function Home() {
         <GlobalReach />
         <Strengths />
         <Partners />
+        <Hiring />
         <About />
         <Founder />
         <Faq />
