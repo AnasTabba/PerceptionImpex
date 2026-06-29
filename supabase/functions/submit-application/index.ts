@@ -152,12 +152,19 @@ async function sendEmails(
   const from = `Perception Impex HR <${Deno.env.get("HR_FROM") ?? "hr@perceptionimpex.com"}>`;
   const notifyTo = Deno.env.get("NOTIFY_TO") ?? "info@perceptionimpex.com";
 
-  const send = (payload: unknown) =>
-    fetch("https://api.resend.com/emails", {
+  if (!key) {
+    console.error("RESEND_API_KEY is not set; skipping emails");
+    return;
+  }
+  const send = async (payload: unknown) => {
+    const r = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${key}`, "content-type": "application/json" },
       body: JSON.stringify(payload),
     });
+    if (!r.ok) console.error("resend send failed", r.status, await r.text());
+    return r;
+  };
 
   const rows = Object.entries({
     Name: d.full_name, Email: d.email, Phone: d.phone, CNIC: d.cnic,
