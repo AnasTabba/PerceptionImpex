@@ -7,3 +7,7 @@ out/
 
 # TypeScript incremental build cache
 *.tsbuildinfo
+
+# Source photo dump (optimized .webp committed under public/images/)
+photos/
+.superpowers/

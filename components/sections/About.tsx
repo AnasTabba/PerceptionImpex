@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -12,6 +13,18 @@ export function About() {
           title="25+ years of trusted relationships"
           description={company.overview}
         />
+
+        {/* Sourcing from partner spinning mills */}
+        <Reveal className="mt-12 overflow-hidden rounded-2xl shadow-soft ring-1 ring-stone-200">
+          <Image
+            src="/images/spinning-mills.webp"
+            alt="Yarn spun on a production line at a partner spinning mill in Pakistan"
+            width={751}
+            height={449}
+            className="h-56 w-full object-cover sm:h-72 lg:h-80"
+            sizes="(min-width: 1024px) 1100px, 100vw"
+          />
+        </Reveal>
 
         {/* Timeline */}
         <ol className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
