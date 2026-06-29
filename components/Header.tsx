@@ -7,6 +7,9 @@ import { Logo } from "@/components/Logo";
 import { Menu, Close, WhatsApp, ArrowRight } from "@/components/ui/Icons";
 import { nav, whatsappHref } from "@/lib/content";
 
+// Section id for a nav href like "/#products" -> "products"; "" for hash-less links (e.g. /careers/).
+const sectionId = (href: string) => href.split("#")[1] ?? "";
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -21,7 +24,7 @@ export function Header() {
 
   // Scroll-spy: highlight the nav item for the section currently in view.
   useEffect(() => {
-    const ids = nav.map((n) => n.href.split("#")[1] ?? "").filter(Boolean);
+    const ids = nav.map((n) => sectionId(n.href)).filter(Boolean);
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
@@ -64,7 +67,8 @@ export function Header() {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-5 xl:gap-6 lg:flex" aria-label="Primary">
           {nav.map((item) => {
-            const active = activeId === (item.href.split("#")[1] ?? "");
+            const id = sectionId(item.href);
+            const active = id !== "" && activeId === id;
             return (
               <a
                 key={item.href}
@@ -127,7 +131,8 @@ export function Header() {
         <Container className="flex min-h-full flex-col py-6">
           <nav className="flex flex-col" aria-label="Mobile">
             {nav.map((item) => {
-              const active = activeId === (item.href.split("#")[1] ?? "");
+              const id = sectionId(item.href);
+              const active = id !== "" && activeId === id;
               return (
                 <a
                   key={item.href}

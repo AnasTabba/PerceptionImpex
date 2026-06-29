@@ -435,7 +435,6 @@ export type CareerProgram = {
   duration: string;
   blurb: string;
   employmentType: "INTERN" | "FULL_TIME";
-  departmentIds: string[];
 };
 
 export const careerPrograms: CareerProgram[] = [
@@ -447,7 +446,6 @@ export const careerPrograms: CareerProgram[] = [
     blurb:
       "A hands-on summer internship for students who want real exposure to how a textile trading house runs. Work alongside our teams, learn the yarn trade from the inside, and build skills you cannot get in a classroom.",
     employmentType: "INTERN",
-    departmentIds: ["finance", "it", "hr", "sales", "supply-chain", "impex"],
   },
   {
     id: "elevate",
@@ -457,7 +455,6 @@ export const careerPrograms: CareerProgram[] = [
     blurb:
       "A career-track program for fresh graduates ready to grow into future leaders. Structured rotations, mentorship from senior management, and a clear path into a permanent role within the company.",
     employmentType: "FULL_TIME",
-    departmentIds: ["sales", "supply-chain", "finance", "impex"],
   },
 ];
 
@@ -596,6 +593,9 @@ export const careerFaqs = [
 // Static posting date for JobPosting structured data (kept constant so the
 // static export is deterministic). Update when the campaign is refreshed.
 export const CAREERS_POSTED_DATE = "2026-06-29";
+
+// Applications stay open through this date. Google recommends validThrough on JobPostings.
+export const CAREERS_VALID_THROUGH = "2026-12-31";
 
 // Separate Formspree endpoint for applications (distinct from the quote form).
 // Replace once the form is created at formspree.io. While empty, the

@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/Button";
 import { careerPrograms } from "@/lib/content";
 
 export function CareersHero() {
+  const aspire = careerPrograms.find((p) => p.id === "aspire")!;
+  const elevate = careerPrograms.find((p) => p.id === "elevate")!;
   return (
     <section className="scroll-mt-24 bg-ink pt-28 pb-20 text-white sm:pt-36 sm:pb-28">
       <Container>
@@ -19,7 +21,7 @@ export function CareersHero() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70 text-pretty">
             Two early-career programs at one of Pakistan&apos;s trusted yarn trading houses: the{" "}
-            {careerPrograms[0].name} for students and the {careerPrograms[1].name} for fresh
+            {aspire.name} for students and the {elevate.name} for fresh
             graduates. Learn the business from a team with 25+ years in the industry.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">

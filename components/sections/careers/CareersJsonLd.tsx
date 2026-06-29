@@ -1,4 +1,4 @@
-import { careerPositions, careerPrograms, CAREERS_POSTED_DATE } from "@/lib/content";
+import { careerPositions, careerPrograms, CAREERS_POSTED_DATE, CAREERS_VALID_THROUGH } from "@/lib/content";
 
 const SITE_URL = "https://www.perceptionimpex.com";
 
@@ -18,6 +18,12 @@ export function CareersJsonLd() {
       title: `${pos.name}: ${programNames}`,
       description: `${pos.blurb} Apply through the ${programNames} at Perception Impex, a Pakistan-based yarn trading and sourcing company.`,
       datePosted: CAREERS_POSTED_DATE,
+      validThrough: CAREERS_VALID_THROUGH,
+      identifier: {
+        "@type": "PropertyValue",
+        name: "Perception Impex",
+        value: `PI-${pos.id}`,
+      },
       employmentType,
       hiringOrganization: {
         "@type": "Organization",
