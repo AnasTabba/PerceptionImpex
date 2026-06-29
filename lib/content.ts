@@ -606,10 +606,9 @@ export const CAREERS_POSTED_DATE = "2026-06-29";
 // Applications stay open through this date. Google recommends validThrough on JobPostings.
 export const CAREERS_VALID_THROUGH = "2026-12-31";
 
-// Separate Formspree endpoint for applications (distinct from the quote form).
-// Replace once the form is created at formspree.io. While empty, the
-// application form falls back to a pre-filled WhatsApp message.
-export const CAREERS_FORMSPREE_ID = "";
-export const careersFormspreeAction = CAREERS_FORMSPREE_ID
-  ? `https://formspree.io/f/${CAREERS_FORMSPREE_ID}`
-  : "";
+// Careers application submission endpoint (Supabase Edge Function) and the
+// public Cloudflare Turnstile site key. Both are filled once the owner's
+// Supabase project and Turnstile widget exist. While CAREERS_SUBMIT_URL is
+// empty, the form shows an "applications open soon" state (no WhatsApp).
+export const CAREERS_SUBMIT_URL = "";
+export const TURNSTILE_SITE_KEY = "";
