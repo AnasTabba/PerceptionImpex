@@ -93,10 +93,10 @@ export const products: Product[] = [
       "Trousers",
     ],
     image: {
-      src: "/images/yarn-cones.webp",
-      alt: "Rows of cotton yarn cones ready for production",
-      w: 500,
-      h: 500,
+      src: "/images/cotton-yarn.webp",
+      alt: "Cotton yarn cones with natural cotton bolls",
+      w: 499,
+      h: 431,
     },
   },
   {
@@ -106,10 +106,10 @@ export const products: Product[] = [
       "Polyester-cotton blended yarn offering durability and comfort for a wide range of garment applications.",
     applications: ["Knitted Garments", "Workwear", "Activewear", "Fleece"],
     image: {
-      src: "/images/yarn-warehouse.webp",
-      alt: "Warehouse rows of blended yarn cones",
-      w: 525,
-      h: 350,
+      src: "/images/pc-yarn.webp",
+      alt: "Brightly coloured polyester-cotton PC yarn cones",
+      w: 496,
+      h: 440,
     },
   },
   {
@@ -119,10 +119,10 @@ export const products: Product[] = [
       "Chief Value Cotton yarn engineered for superior comfort and performance with a cotton-rich blend.",
     applications: ["Premium Knitwear", "Hoodies", "Sweatshirts", "Polos"],
     image: {
-      src: "/images/yarn-spinning.webp",
-      alt: "Spinning machine producing fine yarn",
-      w: 547,
-      h: 365,
+      src: "/images/cvc-yarn.webp",
+      alt: "Cream, blue and navy CVC yarn cones",
+      w: 507,
+      h: 442,
     },
   },
   {
@@ -139,10 +139,10 @@ export const products: Product[] = [
       "Tracksuits",
     ],
     image: {
-      src: "/images/yarn-jacquard.webp",
-      alt: "Jacquard and specialty yarn production on a modern spinning floor",
-      w: 692,
-      h: 443,
+      src: "/images/specialty-yarn.webp",
+      alt: "Pastel dyed specialty yarn skeins",
+      w: 762,
+      h: 450,
     },
   },
 ];
