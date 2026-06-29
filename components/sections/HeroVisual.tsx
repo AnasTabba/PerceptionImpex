@@ -47,8 +47,8 @@ export function HeroVisual() {
       >
         <Image
           ref={imgRef}
-          src="/images/yarn-warehouse.webp"
-          alt="Rows of premium yarn cones in a spinning mill warehouse"
+          src="/images/spinning-mills.webp"
+          alt="Yarn spun on a production line at a partner spinning mill in Pakistan"
           fill
           priority
           sizes="(max-width: 1024px) 100vw, 560px"
