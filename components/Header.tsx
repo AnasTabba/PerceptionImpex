@@ -21,7 +21,7 @@ export function Header() {
 
   // Scroll-spy: highlight the nav item for the section currently in view.
   useEffect(() => {
-    const ids = nav.map((n) => n.href.replace("#", ""));
+    const ids = nav.map((n) => n.href.split("#")[1] ?? "").filter(Boolean);
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
@@ -64,7 +64,7 @@ export function Header() {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-5 xl:gap-6 lg:flex" aria-label="Primary">
           {nav.map((item) => {
-            const active = activeId === item.href.replace("#", "");
+            const active = activeId === (item.href.split("#")[1] ?? "");
             return (
               <a
                 key={item.href}
@@ -90,7 +90,7 @@ export function Header() {
           >
             <WhatsApp className="h-5 w-5" />
           </a>
-          <Button as="a" href="#quote" variant="primary">
+          <Button as="a" href="/#quote" variant="primary">
             Request Quote
           </Button>
         </div>
@@ -127,7 +127,7 @@ export function Header() {
         <Container className="flex min-h-full flex-col py-6">
           <nav className="flex flex-col" aria-label="Mobile">
             {nav.map((item) => {
-              const active = activeId === item.href.replace("#", "");
+              const active = activeId === (item.href.split("#")[1] ?? "");
               return (
                 <a
                   key={item.href}
@@ -150,7 +150,7 @@ export function Header() {
           </nav>
 
           <div className="mt-auto flex flex-col gap-3 pt-8">
-            <Button as="a" href="#quote" variant="primary" size="lg" onClick={() => setOpen(false)}>
+            <Button as="a" href="/#quote" variant="primary" size="lg" onClick={() => setOpen(false)}>
               Request Quote
             </Button>
             <Button
