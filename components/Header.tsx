@@ -57,7 +57,7 @@ export function Header() {
         }`}
       >
         <Container className="flex h-16 items-center justify-between lg:h-20">
-        <a href="#main" className="shrink-0" aria-label="Perception Impex home">
+        <a href="/#main" className="shrink-0" aria-label="Perception Impex home">
           <Logo />
         </a>
 
