@@ -337,11 +337,12 @@ export const markets = [
 export type FormField = {
   name: string;
   label: string;
-  type: "text" | "email" | "tel" | "url" | "select" | "textarea";
+  type: "text" | "email" | "tel" | "url" | "file" | "select" | "textarea";
   required: boolean;
   options?: string[];
   autoComplete?: string;
   placeholder?: string;
+  accept?: string; // for file inputs
   full?: boolean; // span full width in the grid
 };
 
@@ -518,6 +519,13 @@ export const careerApplicationFields: FormField[] = [
   { name: "email", label: "Email", type: "email", required: true, autoComplete: "email" },
   { name: "phone", label: "Phone / WhatsApp", type: "tel", required: true, autoComplete: "tel" },
   {
+    name: "cnic",
+    label: "CNIC",
+    type: "text",
+    required: true,
+    placeholder: "00000-0000000-0",
+  },
+  {
     name: "program",
     label: "Program",
     type: "select",
@@ -550,11 +558,12 @@ export const careerApplicationFields: FormField[] = [
   { name: "gpa", label: "CGPA / GPA", type: "text", required: true, placeholder: "e.g. 3.4 / 4.0" },
   { name: "city", label: "City", type: "text", required: true, autoComplete: "address-level2" },
   {
-    name: "cv_link",
-    label: "LinkedIn or CV Link",
-    type: "url",
+    name: "cv",
+    label: "CV / Resume (PDF, DOC, DOCX — max 5MB)",
+    type: "file",
     required: true,
-    placeholder: "https://drive.google.com/…  or  linkedin.com/in/…",
+    accept: ".pdf,.doc,.docx",
+    full: true,
   },
   { name: "availability", label: "Availability / Start Date", type: "text", required: false },
   {
@@ -578,7 +587,7 @@ export const careerFaqs = [
   },
   {
     q: "Do I need a CV to apply?",
-    a: "Yes. Paste a link to your CV (a Google Drive link) or your LinkedIn profile in the application form so we can review your background.",
+    a: "Yes. Attach your CV as a PDF, DOC, or DOCX file (up to 5MB) in the application form so we can review your background.",
   },
   {
     q: "Is the internship paid?",
