@@ -410,7 +410,7 @@ export const faqs = [
 ];
 
 export const nav = [
-  { label: "Yarns", href: "/#products" },
+  { label: "Products", href: "/products/" },
   { label: "Yarn Range", href: "/#yarn-range" },
   { label: "Global Reach", href: "/#global" },
   { label: "Why Us", href: "/#why" },
