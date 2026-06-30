@@ -613,3 +613,96 @@ export const CAREERS_VALID_THROUGH = "2026-12-31";
 export const CAREERS_SUBMIT_URL =
   "https://pihsfbgxmpnmogwgvqlk.supabase.co/functions/v1/submit-application";
 export const TURNSTILE_SITE_KEY = "0x4AAAAAADs_uR77o-ZfE1Kt";
+
+// ─── SEO product landing pages ──────────────────────────────────────────────
+
+export type ProductPage = {
+  slug: string;
+  name: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
+  h1: string;
+  intro: string;
+  overview: string[];
+  image: { src: string; alt: string; w: number; h: number };
+  specGroups: { title: string; desc: string; counts: string[] }[];
+  extraSpecNote: string;
+  applications: string[];
+  faqs: { q: string; a: string }[];
+  related: string[]; // slugs of related product pages
+};
+
+export const productPages: Record<string, ProductPage> = {
+  "cotton-yarn": {
+    slug: "cotton-yarn",
+    name: "Cotton Yarn",
+    metaTitle: "Cotton Yarn Supplier & Exporter in Pakistan",
+    metaDescription:
+      "Perception Impex is a trusted cotton yarn supplier, dealer and exporter in Pakistan. Carded and combed, ring-spun and compact cotton yarn from Ne 8s to Ne 40s, sourced from leading spinning mills since 2000.",
+    keywords: [
+      "cotton yarn supplier Pakistan",
+      "cotton yarn exporter Pakistan",
+      "carded cotton yarn",
+      "combed cotton yarn",
+      "ring spun cotton yarn",
+      "cotton yarn dealer Karachi",
+    ],
+    h1: "Cotton Yarn Supplier & Exporter in Pakistan",
+    intro:
+      "Perception Impex supplies high-quality 100% cotton yarn, carded and combed, ring-spun and compact, sourced from Pakistan's leading spinning mills. In the yarn trade since 2000, we serve knitters, weavers, and garment exporters with consistent quality, competitive pricing, and dependable delivery.",
+    overview: [
+      "Cotton yarn is the backbone of knit and woven fabrics. We source it across the full count range from trusted spinning mills, so manufacturers get the right quality at the right price, on time. Our cotton yarn is engineered for softness, consistency, and breathability.",
+      "Carded qualities give you cost-effective yarn for everyday production, while combed qualities deliver the smoothness and strength premium garments demand. Because we work directly with leading mills, we match your specification on count, twist, and quality, and supply consistent lots order after order, from single programs to high-volume export orders.",
+    ],
+    image: {
+      src: "/images/cotton-yarn.webp",
+      alt: "Natural white cotton yarn cones with cotton bolls",
+      w: 499,
+      h: 431,
+    },
+    specGroups: [
+      {
+        title: "Carded Cotton Yarn",
+        desc: "Ring-spun carded counts for everyday knit and woven fabrics.",
+        counts: ["Ne 8/1", "Ne 10/1", "Ne 12/1", "Ne 14/1", "Ne 16/1", "Ne 20/1", "Ne 21/1"],
+      },
+      {
+        title: "Combed Cotton Yarn",
+        desc: "Smoother, stronger combed counts for premium-quality fabrics.",
+        counts: ["Ne 16/1", "Ne 20/1", "Ne 24/1", "Ne 26/1", "Ne 30/1", "Ne 32/1"],
+      },
+    ],
+    extraSpecNote:
+      "Also available: compact and Siro qualities, plied yarns (e.g. Ne 20/2, Ne 32/2), and cone-dyed cotton yarn. Range extends to Ne 40s and beyond on request.",
+    applications: [
+      "T-Shirts",
+      "Polo Shirts",
+      "Hoodies",
+      "Sweatshirts",
+      "Pullovers",
+      "Knitwear",
+      "Trousers",
+      "Home Textiles",
+    ],
+    faqs: [
+      {
+        q: "What cotton yarn counts do you supply?",
+        a: "We supply carded counts from Ne 8/1 to Ne 21/1 and combed counts from Ne 16/1 to Ne 32/1, in ring-spun and compact qualities. Other counts up to Ne 40s and multiply (plied) yarns are available to order.",
+      },
+      {
+        q: "What is the difference between carded and combed cotton yarn?",
+        a: "Carded yarn is cost-effective and well suited to everyday knit and woven fabrics. Combed yarn goes through an extra combing stage that removes short fibres, giving a smoother, stronger, higher-quality yarn for premium fabrics.",
+      },
+      {
+        q: "What is your minimum order quantity for cotton yarn?",
+        a: "Our minimum order is 500 bags per month. We supply at volume to manufacturers and exporters and can discuss requirements based on count and quality.",
+      },
+      {
+        q: "Do you export cotton yarn from Pakistan?",
+        a: "Yes. We supply manufacturers and exporters in Pakistan and internationally, including buyers in the United States, Canada, and the United Kingdom, sourcing quality cotton yarn from leading spinning mills.",
+      },
+    ],
+    related: ["pc-yarn", "cvc-yarn", "specialty-yarn"],
+  },
+};
