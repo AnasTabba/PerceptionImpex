@@ -66,11 +66,26 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {products.map((p) => (
                 <li key={p.id}>
-                  <a href="/#products" className="text-sm text-white/70 transition-colors hover:text-white">
+                  <a href={`/products/${p.id}-yarn/`} className="text-sm text-white/70 transition-colors hover:text-white">
                     {p.name}
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/products/" className="text-sm text-white/70 transition-colors hover:text-white">
+                  All Products
+                </a>
+              </li>
+              <li>
+                <a href="/yarn-supplier-karachi/" className="text-sm text-white/70 transition-colors hover:text-white">
+                  Yarn Supplier in Karachi
+                </a>
+              </li>
+              <li>
+                <a href="/yarn-exporter-pakistan/" className="text-sm text-white/70 transition-colors hover:text-white">
+                  Yarn Exporter Pakistan
+                </a>
+              </li>
             </ul>
           </div>
 

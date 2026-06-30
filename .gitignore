@@ -11,3 +11,7 @@ out/
 # Source photo dump (optimized .webp committed under public/images/)
 photos/
 .superpowers/
+
+# Deno + Supabase CLI artifacts (edge function deploys from supabase/functions)
+deno.lock
+supabase/.temp/
