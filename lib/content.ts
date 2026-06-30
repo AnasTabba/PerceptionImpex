@@ -705,4 +705,195 @@ export const productPages: Record<string, ProductPage> = {
     ],
     related: ["pc-yarn", "cvc-yarn", "specialty-yarn"],
   },
+  "pc-yarn": {
+    slug: "pc-yarn",
+    name: "PC Yarn",
+    metaTitle: "PC Yarn (Polyester-Cotton) Supplier & Exporter in Pakistan",
+    metaDescription:
+      "Perception Impex supplies polyester-cotton (PC) blended yarn in Pakistan. Durable, easy-care PC yarn for knitwear, workwear and activewear, sourced from leading spinning mills since 2000.",
+    keywords: [
+      "PC yarn supplier Pakistan",
+      "polyester cotton yarn",
+      "PC blended yarn",
+      "PC yarn exporter Pakistan",
+      "poly cotton yarn supplier",
+    ],
+    h1: "PC Yarn (Polyester-Cotton) Supplier in Pakistan",
+    intro:
+      "Perception Impex supplies polyester-cotton (PC) blended yarn that combines the durability of polyester with the comfort of cotton. Sourced from Pakistan's leading spinning mills since 2000, our PC yarn serves knitters and garment manufacturers who need hard-wearing, easy-care fabrics at competitive prices.",
+    overview: [
+      "PC yarn blends polyester and cotton so fabrics hold their shape, resist shrinkage, and need less care, while keeping a comfortable cotton feel. The standard blend is 65% polyester and 35% cotton, the most widely used ratio for knitted and woven garments.",
+      "We source PC yarn across a range of counts directly from leading mills, matching your blend ratio, count, and quality. From workwear and uniforms to activewear and fleece, our PC yarn keeps high-volume production running on time and on budget.",
+    ],
+    image: {
+      src: "/images/pc-yarn.webp",
+      alt: "Brightly coloured polyester-cotton PC yarn cones",
+      w: 496,
+      h: 440,
+    },
+    specGroups: [
+      {
+        title: "Carded PC Yarn",
+        desc: "Polyester-cotton counts for everyday knit and woven fabrics.",
+        counts: ["Ne 10/1", "Ne 16/1", "Ne 20/1", "Ne 24/1"],
+      },
+      {
+        title: "Finer PC Yarn",
+        desc: "Finer polyester-cotton counts for lighter, smoother fabrics.",
+        counts: ["Ne 26/1", "Ne 30/1", "Ne 32/1"],
+      },
+    ],
+    extraSpecNote:
+      "Standard 65/35 polyester-cotton blend, with other blend ratios and plied PC yarn available to order. Counts up to Ne 40s on request.",
+    applications: ["Knitted Garments", "Workwear", "Activewear", "Fleece", "T-Shirts", "Uniforms"],
+    faqs: [
+      {
+        q: "What is PC yarn?",
+        a: "PC yarn is a polyester-cotton blended yarn. It combines polyester's strength and durability with cotton's softness and breathability, giving fabrics that wear well and need less care.",
+      },
+      {
+        q: "What blend ratios do you supply?",
+        a: "Our standard blend is 65% polyester and 35% cotton, the most widely used PC ratio. Other blend ratios are available to order based on your fabric requirement.",
+      },
+      {
+        q: "What is PC yarn used for?",
+        a: "PC yarn is popular for knitted garments, workwear, uniforms, activewear, and fleece, where durability and easy care matter most.",
+      },
+      {
+        q: "Do you export PC yarn from Pakistan?",
+        a: "Yes. We supply PC yarn to manufacturers and exporters in Pakistan and abroad, including buyers in the United States, Canada, and the United Kingdom.",
+      },
+    ],
+    related: ["cotton-yarn", "cvc-yarn", "specialty-yarn"],
+  },
+  "cvc-yarn": {
+    slug: "cvc-yarn",
+    name: "CVC Yarn",
+    metaTitle: "CVC Yarn (Chief Value Cotton) Supplier in Pakistan",
+    metaDescription:
+      "Perception Impex supplies CVC (Chief Value Cotton) yarn in Pakistan. Cotton-rich blends for premium knitwear, hoodies and polos, sourced from leading spinning mills since 2000.",
+    keywords: [
+      "CVC yarn supplier Pakistan",
+      "chief value cotton yarn",
+      "CVC blended yarn",
+      "CVC yarn exporter",
+      "cotton rich yarn supplier",
+    ],
+    h1: "CVC Yarn (Chief Value Cotton) Supplier in Pakistan",
+    intro:
+      "Perception Impex supplies CVC yarn, a Chief Value Cotton blend where cotton is the majority fibre. It offers the comfort and feel of cotton with the added durability of polyester, which makes it a favourite for premium knitwear. We source it from Pakistan's leading spinning mills with consistent quality and competitive pricing.",
+    overview: [
+      "CVC stands for Chief Value Cotton, a blend in which cotton is the larger share, for example 60% cotton and 40% polyester. That cotton-rich balance gives fabrics a soft, natural feel while the polyester adds strength and shape retention.",
+      "We source CVC yarn across a range of counts directly from leading mills, matching your blend ratio and quality. It is a popular choice for hoodies, sweatshirts, and polos where a premium cotton hand is wanted with everyday durability.",
+    ],
+    image: {
+      src: "/images/cvc-yarn.webp",
+      alt: "Cream, blue and navy CVC yarn cones",
+      w: 507,
+      h: 442,
+    },
+    specGroups: [
+      {
+        title: "Carded CVC Yarn",
+        desc: "Cotton-rich blended counts for premium knit fabrics.",
+        counts: ["Ne 16/1", "Ne 20/1", "Ne 24/1", "Ne 26/1"],
+      },
+      {
+        title: "Combed CVC Yarn",
+        desc: "Finer, smoother combed counts for higher-quality fabrics.",
+        counts: ["Ne 28/1", "Ne 30/1", "Ne 32/1"],
+      },
+    ],
+    extraSpecNote:
+      "Standard CVC blend is cotton-rich, for example 60% cotton and 40% polyester, with other ratios and plied yarns available to order.",
+    applications: ["Premium Knitwear", "Hoodies", "Sweatshirts", "Polos", "Fleece"],
+    faqs: [
+      {
+        q: "What is CVC yarn?",
+        a: "CVC stands for Chief Value Cotton. It is a polyester-cotton blend where cotton is the majority fibre, so the yarn feels closer to pure cotton while gaining some of polyester's durability.",
+      },
+      {
+        q: "How is CVC different from PC yarn?",
+        a: "In CVC yarn cotton is the larger share of the blend, so it feels softer and more cotton-like. In PC yarn polyester is usually the larger share, which makes it more hard-wearing and economical.",
+      },
+      {
+        q: "What is CVC yarn used for?",
+        a: "CVC is popular for premium knitwear, hoodies, sweatshirts, and polos, where a soft cotton feel with added durability is wanted.",
+      },
+      {
+        q: "Do you export CVC yarn?",
+        a: "Yes. We supply CVC yarn to manufacturers and exporters in Pakistan and internationally, including the United States, United Kingdom, and Canada.",
+      },
+    ],
+    related: ["cotton-yarn", "pc-yarn", "specialty-yarn"],
+  },
+  "specialty-yarn": {
+    slug: "specialty-yarn",
+    name: "Specialty Yarn",
+    metaTitle: "Specialty & Dyed Yarn Supplier in Pakistan",
+    metaDescription:
+      "Perception Impex supplies specialty yarns in Pakistan, including slub, core-spun, gassed mercerized and cone-dyed yarns. Custom and export-quality yarn from leading spinning mills since 2000.",
+    keywords: [
+      "specialty yarn supplier Pakistan",
+      "dyed yarn supplier",
+      "gassed mercerized yarn",
+      "slub yarn",
+      "core spun yarn",
+      "custom yarn Pakistan",
+    ],
+    h1: "Specialty & Dyed Yarn Supplier in Pakistan",
+    intro:
+      "Beyond standard cotton and blended yarns, Perception Impex sources a wide range of specialty yarns: slub, core-spun, compact Siro, gassed mercerized, and cone-dyed yarns produced to precise buyer specifications. If you have a custom or export-quality requirement, we can source it from our mill network.",
+    overview: [
+      "Specialty yarns let you build character and performance into fabric, from textured slub and fancy yarns to stretch core-spun yarn with a Lycra core. We also source compact Siro yarns with low hairiness and high strength for premium results.",
+      "For finish and colour, we supply cone-dyed yarn in your required shade and gassed mercerized yarn with superior lustre and smoothness. Tell us the fabric you are making and the look you want, and we will source the right specialty yarn to your specification.",
+    ],
+    image: {
+      src: "/images/specialty-yarn.webp",
+      alt: "Pastel dyed specialty yarn skeins",
+      w: 762,
+      h: 450,
+    },
+    specGroups: [
+      {
+        title: "Textured & Fancy Yarns",
+        desc: "Slub, fancy, core-spun and compact Siro yarns for character and stretch.",
+        counts: ["Slub Yarn", "Fancy Yarn", "Core-Spun (Lycra)", "Compact Siro"],
+      },
+      {
+        title: "Dyed & Finished Yarns",
+        desc: "Cone-dyed and gassed mercerized yarns with superior finish.",
+        counts: ["Package / Cone Dyed", "Gassed Mercerized", "Plied (2-ply)", "Jacquard Finish"],
+      },
+    ],
+    extraSpecNote:
+      "All produced to your specification on count, blend, twist, and shade. Tell us the fabric you are making and we will source the right specialty yarn.",
+    applications: [
+      "Jacquard Finish",
+      "Custom Requirement",
+      "Export Quality",
+      "Knitted Polos",
+      "Jackets",
+      "Tracksuits",
+    ],
+    faqs: [
+      {
+        q: "What specialty yarns do you supply?",
+        a: "We source slub, fancy, core-spun (cotton-wrapped Lycra), compact Siro, plied, package or cone-dyed, and gassed mercerized yarns, plus custom blends to your specification.",
+      },
+      {
+        q: "Can you supply dyed yarn to a specific shade?",
+        a: "Yes. We supply cone-dyed and gassed mercerized yarns dyed to your required shade, ready for knitting and weaving.",
+      },
+      {
+        q: "Can yarn be made to a custom specification?",
+        a: "Yes. We source custom counts, plies, blends, and finishes to your exact specification from our mill network in Pakistan.",
+      },
+      {
+        q: "Do you supply export-quality specialty yarn?",
+        a: "Yes. We supply export-quality specialty and dyed yarns to manufacturers and exporters in Pakistan and abroad.",
+      },
+    ],
+    related: ["cotton-yarn", "pc-yarn", "cvc-yarn"],
+  },
 };
