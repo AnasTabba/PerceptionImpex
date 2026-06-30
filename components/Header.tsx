@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/Logo";
@@ -14,6 +15,17 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState<string>("");
+
+  // Pages with a dark hero behind the (transparent, unscrolled) header need
+  // light nav/logo colors so they stay readable. Once scrolled, the header
+  // gets a light background and reverts to dark colors.
+  const pathname = usePathname() ?? "";
+  const overDarkHero =
+    pathname.startsWith("/products") ||
+    pathname.startsWith("/yarn-supplier-karachi") ||
+    pathname.startsWith("/yarn-exporter-pakistan") ||
+    pathname.startsWith("/careers");
+  const onDark = overDarkHero && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -61,7 +73,7 @@ export function Header() {
       >
         <Container className="flex h-16 items-center justify-between lg:h-20">
         <a href="/#main" className="shrink-0" aria-label="Perception Impex home">
-          <Logo />
+          <Logo tone={onDark ? "light" : "dark"} />
         </a>
 
         {/* Desktop nav */}
@@ -75,7 +87,13 @@ export function Header() {
                 href={item.href}
                 data-active={active}
                 className={`nav-underline text-sm font-medium transition-colors ${
-                  active ? "text-teal-600" : "text-ink-soft hover:text-teal-600"
+                  active
+                    ? onDark
+                      ? "text-white"
+                      : "text-teal-600"
+                    : onDark
+                      ? "text-white/85 hover:text-white"
+                      : "text-ink-soft hover:text-teal-600"
                 }`}
               >
                 {item.label}
@@ -90,7 +108,11 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
-            className="grid h-11 w-11 place-items-center rounded-full text-ink transition-colors hover:bg-stone-100 hover:text-[#25D366]"
+            className={`grid h-11 w-11 place-items-center rounded-full transition-colors ${
+              onDark
+                ? "text-white hover:bg-white/10"
+                : "text-ink hover:bg-stone-100 hover:text-[#25D366]"
+            }`}
           >
             <WhatsApp className="h-5 w-5" />
           </a>
@@ -106,7 +128,9 @@ export function Header() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="grid h-11 w-11 place-items-center rounded-full text-ink lg:hidden"
+          className={`grid h-11 w-11 place-items-center rounded-full lg:hidden ${
+            onDark ? "text-white" : "text-ink"
+          }`}
         >
           {open ? <Close /> : <Menu />}
         </button>

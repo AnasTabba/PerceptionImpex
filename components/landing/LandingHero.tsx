@@ -21,7 +21,7 @@ export function LandingHero({
   whatsappMessage?: string;
 }) {
   return (
-    <section className="bg-ink pt-28 pb-20 text-white sm:pt-36 sm:pb-24">
+    <section className="bg-teal-700 pt-28 pb-20 text-white sm:pt-36 sm:pb-24">
       <Container>
         <Reveal className="max-w-3xl">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/50">
