@@ -83,15 +83,41 @@ Secondary: Textile Mill, Cotton Exporter, Yarn Store, Trading Company
 
 ---
 
-## Where to list (priority order)
+## Submission tracker (work top-down; log the live profile URL when done)
 
-1. **Google Business Profile** — business.google.com (done/in progress)
-2. **PYMA** — Pakistan Yarn Merchants Association member directory (high-authority link)
-3. **KCCI** — Karachi Chamber of Commerce & Industry member listing
-4. **TradeWheel** — tradewheel.com (B2B, ranks well globally)
-5. **ExportersIndia** — exportersindia.com
-6. **Alibaba** — supplier profile
-7. **TextilePages**, **Fibre2Fashion**, **Texile-Exchange** style B2B textile portals
+Fill in **Status** and **Live URL** as you go, so NAP consistency can be re-checked
+later (drift kills the citation signal). Priority = do the top rows first.
 
-For each: fill the description fields above, add the product list, upload your
-logo + yarn photos, and ALWAYS include the website link.
+| # | Platform | Where to submit | Cost | Value | Status | Live URL |
+|---|----------|-----------------|------|-------|--------|----------|
+| 1 | Google Business Profile | business.google.com | Free | ★★★★★ | Verified — see `gbp-optimization.md` | |
+| 2 | PYMA (Pakistan Yarn Merchants' Assoc.) | pyma.com.pk (via membership office) | Membership | ★★★★★ trade body | ☐ | |
+| 3 | KCCI (Karachi Chamber of Commerce) | kcci.com.pk → membership | Membership | ★★★★★ trade body | ☐ | |
+| 4 | Fibre2Fashion | fibre2fashion.com → "Sell / Add company" | Free tier | ★★★★ industry-native | ☐ | |
+| 5 | TradeWheel | tradewheel.com → "Start Selling" | Free tier | ★★★★ global B2B | ☐ | |
+| 6 | Textilepages | textilepages.com/business-listing | Free | ★★★ textile B2B | ☐ | |
+| 7 | Textile Infomedia | textileinfomedia.com → free register | Free | ★★★ textile B2B | ☐ | |
+| 8 | ExportersIndia | exportersindia.com → "Sell" | Free tier | ★★★ | ☐ | |
+| 9 | Alibaba | alibaba.com supplier account | Free tier | ★★★ | ☐ | |
+| 10 | Hamariweb business directory | hamariweb.com/finance/directory | Free | ★★ PK citation | ☐ | |
+| 11 | UrduPoint business directory | urdupoint.com/business/directory | Free | ★★ PK citation | ☐ | |
+| 12 | TradeKey | tradekey.com | Free tier | ★★ | ☐ | |
+| 13 | eWorldTrade | eworldtrade.com | Free tier | ★★ | ☐ | |
+| 14 | Go4WorldBusiness | go4worldbusiness.com | Free tier | ★★ | ☐ | |
+| 15 | Bing Places | bingplaces.com | Free | ★★ (import from GBP) | ☐ | |
+
+> Trade bodies (PYMA, KCCI) require paid membership but carry the most SEO and real-
+> world credibility — prioritize them if the owner is/becomes a member. The free B2B
+> portals (rows 4–15) are quick wins: same paste, ~10 min each.
+
+For each: paste the description fields above, add the product list, upload logo + yarn
+photos, and ALWAYS include **https://www.perceptionimpex.com**. Then verify NAP against
+the "Core business details" block before moving on.
+
+---
+
+## After the tracker — see also
+
+- `off-page-seo-playbook.md` — the master 30-day sequence tying this together.
+- `gbp-optimization.md` — Google Business Profile completion + posts + reviews.
+- `community-presence.md` — genuine Reddit / forum / Q&A participation.
